@@ -1,0 +1,31 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <BaseOutputPath>..\build</BaseOutputPath>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Import\**" />
+    <Compile Remove="Rules\**" />
+    <EmbeddedResource Remove="Import\**" />
+    <EmbeddedResource Remove="Rules\**" />
+    <None Remove="Import\**" />
+    <None Remove="Rules\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Editing\" />
+    <Folder Include="Matrix\" />
+    <Folder Include="Algorithms\" />
+    <Folder Include="Persistency\" />
+    <Folder Include="Query\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Dsmviz.Interfaces.Data\Dsmviz.Interfaces.Data.csproj" />
+  </ItemGroup>
+
+</Project>

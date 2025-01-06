@@ -1,0 +1,28 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:valueConverters="clr-namespace:Dsmviz.Viewer.View.ValueConverters"
+                    xmlns:valueConverters1="clr-namespace:Dsmviz.Viewer.View.ValueConverters">
+    <valueConverters1:SearchStateToColorConverter x:Key="SearchStateToColorConverter" 
+                    NoMatchBrush="{StaticResource SearchNoMatchTextColor}"
+                    MatchBrush="{StaticResource SearchMatchTextColor}" 
+                    MultipleMatchesBrush="{StaticResource SearchMultipleMatchesTextColor}" />
+    <valueConverters:SearchStateOffToVisibilityConverter x:Key="SearchStateOffToVisibilityConverter" />
+    <valueConverters:SearchStateNotOffToVisibilityConverter x:Key="SearchStateNotOffToVisibilityConverter" />
+    <valueConverters:SearchElementFoundToVisibilityConverter x:Key="SearchElementFoundToVisibilityConverter" />
+    <valueConverters:SearchElementNotFoundToVisibilityConverter x:Key="SearchElementNotFoundToVisibilityConverter" />
+    <valueConverters:MetricsExpandedToButtonContentConverter x:Key="MetricsExpandedToButtonContentConverter" />
+    <valueConverters:MetricsExpandedToViewWidthConverter x:Key="MetricsExpandedToViewWidthConverter" 
+                    ViewWidth="120"/>
+    <valueConverters:EditExpandedToButtonContentConverter x:Key="EditExpandedToButtonContentConverter" />
+    <valueConverters:EditExpandedToViewWidthConverter x:Key="EditExpandedToViewWidthConverter" 
+                    MaxViewWidth="400" MinViewWidth="30"/>    
+    <valueConverters:MatrixSizeToVisibilityConverter x:Key="MatrixSizeToVisibilityConverter" />
+    <BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter"/>
+
+    <valueConverters:BookmarkIndicatorModeToVisibilityConverter x:Key="BookmarkIndicatorModeToVisibilityConverter" />
+    <valueConverters:DefaultIndicatorModeToVisibilityConverter x:Key="DefaultIndicatorModeToVisibilityConverter" />
+    <valueConverters:SearchIndicatorModeToVisibilityConverter x:Key="SearchIndicatorModeToVisibilityConverter" />
+    <valueConverters:ProgressStateBusyToVisibilityConverter x:Key="ProgressStateBusyToVisibilityConverter" />
+    <valueConverters:ProgressStateErrorToVisibilityConverter x:Key="ProgressStateErrorToVisibilityConverter" />
+    <valueConverters:CountToVisibilityConverter x:Key="CountToVisibilityConverter" />
+</ResourceDictionary>

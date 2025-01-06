@@ -1,0 +1,64 @@
+﻿<UserControl x:Class=" Dsmviz.Viewer.View.UserControls.ToolView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:usercontrols="clr-namespace:Dsmviz.Viewer.View.UserControls"
+             mc:Ignorable="d" 
+             d:DesignHeight="30" d:DesignWidth="1000"
+             ScrollViewer.HorizontalScrollBarVisibility="Disabled"
+             ScrollViewer.VerticalScrollBarVisibility="Disabled"
+             Loaded="ToolView_OnLoaded">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="80" />
+            <ColumnDefinition Width="30" />
+        </Grid.ColumnDefinitions>
+        <ToolBar Grid.Column="0" Style="{StaticResource ToolBar}" Loaded="ToolBar_Loaded">
+            <Button Style="{StaticResource ToolbarButton}" ToolTip="Open model" Click="OpenButtonClick" Content="{StaticResource OpenIcon}"/>
+            <Button Style="{StaticResource ToolbarButton}" ToolTip="Save model" Command="{Binding SaveFileCommand}" Content="{StaticResource SaveIcon}"/>
+            <Separator/>
+            <Button Style="{StaticResource ToolbarButton}" ToolTip="Import model of other file type" Command="{Binding ImportFileCommand}" Content="{StaticResource ImportIcon}"/>
+            <Button Style="{StaticResource ToolbarButton}" ToolTip="Export model to other file type" Command="{Binding ExportFileCommand}" Content="{StaticResource ExportIcon}"/>
+
+            <Separator/>
+            <Button Style="{StaticResource ToolbarButton}" ToolTip="Move selected element up" Command="{Binding MoveUpElementCommand}" Content="{StaticResource ArrowUpIcon}"/>
+            <Button Style="{StaticResource ToolbarButton}" ToolTip="Move selected element down" Command="{Binding MoveDownElementCommand}" Content="{StaticResource ArrowDownIcon}"/>
+            <Separator/>
+            <Button Style="{StaticResource ToolbarButton}" ToolTip="Sort children of selected element alphabetically ascending" Command="{Binding SortAlphabeticalAscendingCommand}" Content="{StaticResource SortAlphabeticalAscendingIcon}"/>
+            <Button Style="{StaticResource ToolbarButton}" ToolTip="Sort children of selected element alphabetically descending" Command="{Binding SortAlphabeticalDescendingCommand}" Content="{StaticResource SortAlphabeticalDescendingIcon}"/>
+            <Button Style="{StaticResource ToolbarButton}" ToolTip="Sort children of selected element using design matrix sort algorithm" Command="{Binding MatrixSortElementCommand}" Content="{StaticResource SortAscendingIcon}"/>
+            <Separator/>
+            <Button Style="{StaticResource ToolbarButton}" ToolTip="Modify existing element or relation" Command="{Binding EditCommand}" Content="{StaticResource EditIcon}"/>
+            <Separator/>
+            <Button Style="{StaticResource ToolbarButton}" ToolTip="Add sibling element or relation" Command="{Binding AddCommand}" Content="{StaticResource AddIcon}"/>
+            <Button Style="{StaticResource ToolbarButton}" ToolTip="Add child element" Command="{Binding AddChildCommand}" Content="{StaticResource AddChildIcon}"/>
+            <Button Style="{StaticResource ToolbarButton}" ToolTip="Remove existing element or relation" Command="{Binding RemoveCommand}" Content="{StaticResource RemoveIcon}"/>
+            <Separator/>
+            <Button Style="{StaticResource ToolbarButton}" ToolTip="Copy element" Command="{Binding CopyElementCommand}" Content="{StaticResource CopyIcon}"/>
+            <Button Style="{StaticResource ToolbarButton}" ToolTip="Cut element" Command="{Binding CutElementCommand}" Content="{StaticResource CutIcon}"/>
+            <Button Style="{StaticResource ToolbarButton}" ToolTip="Paste element" Command="{Binding PasteElementCommand}" Content="{StaticResource PasteIcon}"/>
+            <Separator/>
+            <Button Style="{StaticResource ToolbarButton}" ToolTip="Toggle bookmark selected element" Command="{Binding ToggleElementBookmarkCommand}" Content="{StaticResource BookmarkIcon}"/>
+            <Separator/>
+            <Button Style="{StaticResource ToolbarButton}" ToolTip="{Binding UndoText}" Command="{Binding UndoCommand}" Content="{StaticResource UndoIcon}"/>
+            <Button Style="{StaticResource ToolbarButton}" ToolTip="{Binding RedoText}" Command="{Binding RedoCommand}" Content="{StaticResource RedoIcon}"/>
+            <Button Style="{StaticResource ToolbarButton}" ToolTip="Show edit history" Command="{Binding ShowHistoryCommand}" Content="{StaticResource HistoryIcon}"/>
+            <Separator/>
+            <Button Style="{StaticResource ToolbarButton}" ToolTip="Show full matrix" Command="{Binding ShowFullMatrixCommand}" Content="{StaticResource FullMatrixIcon}"/>
+            <Button Style="{StaticResource ToolbarButton}" ToolTip="Show context matrix displaying only elements related to selected element or cell" Command="{Binding ShowContextMatrixCommand}" Content="{StaticResource ContextMatrixIcon}"/>
+            <Button Style="{StaticResource ToolbarButton}" ToolTip="Show detail matrix of selected element" Command="{Binding ShowDetailMatrixCommand}" Content="{StaticResource DetailMatrixIcon}"/>
+            <Separator/>
+            <Button Style="{StaticResource ToolbarButton}" ToolTip="Zoom in" Command="{Binding ZoomInCommand}" Content="{StaticResource ZoomInIcon}"/>
+            <Button Style="{StaticResource ToolbarButton}" ToolTip="Zoom out" Command="{Binding ZoomOutCommand}" Content="{StaticResource ZoomOutIcon}"/>
+            <Button Style="{StaticResource ToolbarButton}" ToolTip="Paste screenshot to clipboard" Command="{Binding TakeScreenshotCommand}" Content="{StaticResource ScreenshotIcon}"/>
+            <Separator/>
+            <ComboBox Style="{StaticResource ToolbarComboBox}" ToolTip="Select view perspective" ItemsSource="{Binding SupportedViewPerspectives}" SelectedItem="{Binding SelectedViewPerspective}" Width="100" />
+        </ToolBar>
+        <usercontrols:ElementSearchBox Grid.Column="1" BorderBrush="{StaticResource ForegroundDisabledColor}" BorderThickness="1" DataContext="{Binding Path=ElementSearchViewModel}" Height="24" />
+        <Label Grid.Column="2"  Style="{StaticResource ToolbarLabel}" DataContext="{Binding Path=ElementSearchViewModel}" Content="{Binding SearchResult}" Width="80"/>
+        <Button Grid.Column="3" Style="{StaticResource ToolbarButton}" ToolTip="Change application settings" Command="{Binding ShowSettingsCommand}" Content="{StaticResource SettingsIcon}" DockPanel.Dock="Right" Width="24"/>
+    </Grid>
+</UserControl>

@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<AnalyzerSettings xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <LogLevel>Error</LogLevel>
+  <Input>
+    <AssemblyDirectory>C:\Github\dsmsuite.sourcecode.v2\build\Debug\net8.0</AssemblyDirectory>
+    <AssemblyDirectory>C:\Github\dsmsuite.sourcecode.v2\build\Debug\net8.0-windows</AssemblyDirectory>
+  </Input>
+  <Transformation>
+    <IgnoredNames>
+      <string>^System.</string>
+      <string>^Microsoft.</string>
+      <string>^Interop</string>
+      <string>&lt;</string>
+      <string>^_</string>
+    </IgnoredNames>
+  </Transformation>
+  <Output>
+    <Filename>DsmSuiteV2.dsi</Filename>
+    <Compress>true</Compress>
+  </Output>
+</AnalyzerSettings>

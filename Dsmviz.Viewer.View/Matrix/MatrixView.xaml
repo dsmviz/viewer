@@ -1,0 +1,165 @@
+﻿<UserControl x:Class="Dsmviz.Viewer.View.Matrix.MatrixView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:matrix="clr-namespace:Dsmviz.Viewer.View.Matrix"
+             xmlns:matrix1="clr-namespace:Dsmviz.Viewer.ViewModel.Matrix;assembly=Dsmviz.Viewer.ViewModel"
+             xmlns:sidebar="clr-namespace:Dsmviz.Viewer.View.SideBar"
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300"
+             Margin="5"
+             Background="{StaticResource BackgroundColor}">
+    <UserControl.Resources>
+        <DataTemplate DataType="{x:Type matrix1:ElementToolTipViewModel}">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="10" />
+                    <ColumnDefinition Width="100" />
+                    <ColumnDefinition Width="10" />
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="10" />
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="10" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="10" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+
+                <TextBlock Style="{StaticResource RichToolTipTitleStyle}" Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="3" Text="{Binding Title}"/>
+                
+                <TextBlock Style="{StaticResource RichToolTipPropertiesStyle}" Grid.Row="2" Grid.Column="1" Text="Id"/>
+                <TextBlock Style="{StaticResource RichToolTipPropertiesStyle}" Grid.Row="2" Grid.Column="2" Text=":"/>
+                <TextBlock Style="{StaticResource RichToolTipPropertiesStyle}" Grid.Row="2" Grid.Column="3" Text="{Binding Id}"/>
+
+                <TextBlock Style="{StaticResource RichToolTipPropertiesStyle}" Grid.Row="3" Grid.Column="1" Text="Name"/>
+                <TextBlock Style="{StaticResource RichToolTipPropertiesStyle}" Grid.Row="3" Grid.Column="2" Text=":"/>
+                <TextBlock Style="{StaticResource RichToolTipPropertiesStyle}" Grid.Row="3" Grid.Column="3" Text="{Binding Name}"/>
+            </Grid>
+        </DataTemplate>
+
+        <DataTemplate DataType="{x:Type matrix1:CellToolTipViewModel}">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="10" />
+                    <ColumnDefinition Width="100" />
+                    <ColumnDefinition Width="10" />
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="10" />
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="10" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="10" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="10" />
+                </Grid.RowDefinitions>
+
+                <TextBlock Style="{StaticResource RichToolTipTitleStyle}" Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="3" Text="{Binding Title}"/>
+
+                <TextBlock Style="{StaticResource RichToolTipPropertiesStyle}" Grid.Row="2" Grid.Column="1" Text="ConsumerId"/>
+                <TextBlock Style="{StaticResource RichToolTipPropertiesStyle}" Grid.Row="2" Grid.Column="2" Text=":"/>
+                <TextBlock Style="{StaticResource RichToolTipPropertiesStyle}" Grid.Row="2" Grid.Column="3" Text="{Binding ConsumerId}"/>
+
+                <TextBlock Style="{StaticResource RichToolTipPropertiesStyle}" Grid.Row="3" Grid.Column="1" Text="ConsumerName"/>
+                <TextBlock Style="{StaticResource RichToolTipPropertiesStyle}" Grid.Row="3" Grid.Column="2" Text=":"/>
+                <TextBlock Style="{StaticResource RichToolTipPropertiesStyle}" Grid.Row="3" Grid.Column="3" Text="{Binding ConsumerName}"/>
+
+                <TextBlock Style="{StaticResource RichToolTipPropertiesStyle}" Grid.Row="5" Grid.Column="1" Text="ProviderId"/>
+                <TextBlock Style="{StaticResource RichToolTipPropertiesStyle}" Grid.Row="5" Grid.Column="2" Text=":"/>
+                <TextBlock Style="{StaticResource RichToolTipPropertiesStyle}" Grid.Row="5" Grid.Column="3" Text="{Binding ProviderId}"/>
+
+                <TextBlock Style="{StaticResource RichToolTipPropertiesStyle}" Grid.Row="6" Grid.Column="1" Text="ProviderName"/>
+                <TextBlock Style="{StaticResource RichToolTipPropertiesStyle}" Grid.Row="6" Grid.Column="2" Text=":"/>
+                <TextBlock Style="{StaticResource RichToolTipPropertiesStyle}" Grid.Row="6" Grid.Column="3" Text="{Binding ProviderName}"/>
+            </Grid>
+        </DataTemplate>
+    </UserControl.Resources>
+    <Grid DataContext="{Binding MatrixViewModel}" Background="White" Visibility="{Binding MatrixSize, FallbackValue=Collapsed, Converter={StaticResource MatrixSizeToVisibilityConverter}}">
+        <Grid.LayoutTransform>
+            <ScaleTransform CenterX="0" 
+                                CenterY="0"
+                                ScaleX="{Binding Path=ZoomLevel}"
+                                ScaleY="{Binding Path=ZoomLevel}"/>
+        </Grid.LayoutTransform>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="400" />
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="{Binding IsMetricsViewExpanded, Converter={StaticResource MetricsExpandedToViewWidthConverter}}" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="{Binding IsEditViewExpanded, Converter={StaticResource EditExpandedToViewWidthConverter}}" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <!--  Column 0 matrix navigation and indicator bar-->
+        <matrix:MatrixTopCornerView Grid.Column="0" Grid.Row="0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>
+
+        <Canvas x:Name="RowHeader" Grid.Row="1" Grid.Column="0" Height="Auto" HorizontalAlignment="Stretch" ClipToBounds="True">
+            <matrix:MatrixRowHeaderView x:Name="RowHeaderView" Height="Auto" Width="{Binding ActualWidth, ElementName=RowHeader}" />
+        </Canvas>
+
+        <!--  Column 1 matrix splitter -->
+        <GridSplitter x:Name="Splitter1" Background="Transparent" Grid.Column="1" Grid.Row="0" Grid.RowSpan="2" HorizontalAlignment="Center" VerticalAlignment="Stretch" ShowsPreview="True" Width="5" Style="{StaticResource GridSplitterStyle}"/>
+
+        <!--  Column 2 matrix metrics -->
+        <matrix:MatrixMetricsSelectorView x:Name="MatrixMetricsSelectorView" Grid.Column="2" Grid.Row="0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>
+        <Canvas Grid.Column="2" Grid.Row="1" Height="Auto" HorizontalAlignment="Stretch" ClipToBounds="True">
+            <matrix:MatrixRowMetricsView x:Name="RowMetricsView" Height="Auto" HorizontalAlignment="Stretch"/>
+        </Canvas>
+
+        <!--  Column 3 matrix cells and column header -->
+        <Canvas x:Name="ColumnHeaderCanvas" Grid.Column="3" Grid.Row="0" HorizontalAlignment="Stretch" VerticalAlignment="Top" Height="{StaticResource MatrixHeaderHeight}" ClipToBounds="True">
+            <matrix:MatrixColumnHeaderView x:Name="ColumnHeaderView"  Height="{StaticResource MatrixHeaderHeight}" Width="Auto" />
+        </Canvas>
+        <ScrollViewer x:Name="ScrolledCellsView" Grid.Column="3" Grid.Row="1" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto" ScrollChanged="CellsViewOnScrollChanged">
+            <matrix:MatrixCellsView x:Name="CellsView" Height="Auto" Width="Auto" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,0,20,20" />
+        </ScrollViewer>
+
+        <!--  Column 3 matrix splitter -->
+        <GridSplitter x:Name="Splitter2" Background="Transparent" Grid.Column="4" Grid.Row="0" Grid.RowSpan="2" HorizontalAlignment="Center" VerticalAlignment="Stretch" ShowsPreview="True" Width="5" Style="{StaticResource GridSplitterStyle}"/>
+
+        <!-- edit view -->
+        <sidebar:SideBarView x:Name="MatrixEditView" Grid.Column="5" Grid.Row="0" Grid.RowSpan="2" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>        
+    </Grid>
+</UserControl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

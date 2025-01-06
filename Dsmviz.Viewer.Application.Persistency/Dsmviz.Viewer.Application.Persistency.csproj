@@ -1,0 +1,16 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <BaseOutputPath>..\build</BaseOutputPath>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Dsmviz.Viewer.Data.Import.Dsi\Dsmviz.Viewer.Data.Import.Dsi.csproj" />
+    <ProjectReference Include="..\Dsmviz.Viewer.Utils\Dsmviz.Viewer.Utils.csproj" />
+    <ProjectReference Include="..\Dsmviz.Interfaces.Application\Dsmviz.Interfaces.Application.csproj" />
+  </ItemGroup>
+
+</Project>

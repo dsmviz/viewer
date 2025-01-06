@@ -1,0 +1,57 @@
+﻿<UserControl x:Class="Dsmviz.Viewer.View.SideBar.SelectedMatrixCellSideBarView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             mc:Ignorable="d" 
+             Loaded="OnLoaded"
+             DataContext="{Binding RelationInfoViewModel}"
+             Visibility="{Binding Selected, Converter={StaticResource BooleanToVisibilityConverter}}"
+             d:DesignHeight="600" d:DesignWidth="400">
+    <StackPanel Width="Auto"  Height="Auto" Style="{StaticResource SideBarStackPanelStyle}"  >
+    
+        <TextBlock Style="{StaticResource SideBarTitleStyle}" Text="Selected cell"/>
+        <TextBlock Style="{StaticResource SideBarSectionStyle}" Text="Details"/>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="{StaticResource SideBarRowHeight}" />
+                <RowDefinition Height="{StaticResource SideBarRowHeight}"/>
+                <RowDefinition Height="{StaticResource SideBarRowHeight}" />
+                <RowDefinition Height="{StaticResource SideBarRowHeight}" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="{StaticResource SideBarItemNameWidth}" />
+                <ColumnDefinition Width="{StaticResource SideBarItemSpacerWidth}" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <Label Grid.Row="0" Grid.Column="0" Style="{StaticResource SideBarItemNameStyle}" Content="Consumer name" />
+            <Label Grid.Row="0" Grid.Column="2" Style="{StaticResource SideBarItemValueStyle}" Content="{Binding SelectedConsumer.Name, Mode=OneWay}" ToolTip="{Binding SelectedConsumer.Fullname, Mode=OneWay}" />
+            <Label Grid.Row="1" Grid.Column="0" Style="{StaticResource SideBarItemNameStyle}" Content="Provider name" />
+            <Label Grid.Row="1" Grid.Column="2" Style="{StaticResource SideBarItemValueStyle}"  Content="{Binding SelectedProvider.Name, Mode=OneWay}" ToolTip="{Binding SelectedProvider.Fullname, Mode=OneWay}" />
+            <Label Grid.Row="2" Grid.Column="0" Style="{StaticResource SideBarItemNameStyle}" Content="Weight" />
+            <Label Grid.Row="2" Grid.Column="2" Style="{StaticResource SideBarItemValueStyle}" Content="{Binding CellDerivedWeight}" />
+            <Label Grid.Row="3" Grid.Column="0" Style="{StaticResource SideBarItemNameStyle}" Content="Cycle" />
+            <Label Grid.Row="3" Grid.Column="2" Style="{StaticResource SideBarItemValueStyle}" Content="{Binding CellCycle}" />
+        </Grid>
+
+        <TextBlock Style="{StaticResource SideBarSectionStyle}" Text="Relations"/>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="{StaticResource SideBarRowHeight}" />
+                <RowDefinition Height="{StaticResource SideBarRowHeight}" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="{StaticResource SideBarItemNameWidth}" />
+                <ColumnDefinition Width="{StaticResource SideBarItemSpacerWidth}" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="{StaticResource SideBarButtonWidth}" />
+            </Grid.ColumnDefinitions>
+
+            <Label Grid.Row="0" Grid.Column="0" Style="{StaticResource SideBarItemNameStyle}" Content="Relations" />
+            <Label Grid.Row="0" Grid.Column="2" Style="{StaticResource SideBarItemValueStyle}" Content="{Binding RelationCount, Mode=OneWay}" />
+            <Button Grid.Row="0" Grid.Column="3" Content="{StaticResource RightPointingTriangle}" Style="{StaticResource ArrowButton}" ToolTip="Show list of relations for selected cell" Visibility="{Binding RelationCount, Converter={StaticResource CountToVisibilityConverter}}" Command="{Binding ShowRelationsListCommand}" />
+
+        </Grid>
+
+    </StackPanel>
+</UserControl>

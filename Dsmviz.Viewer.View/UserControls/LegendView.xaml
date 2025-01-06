@@ -1,0 +1,41 @@
+﻿<UserControl x:Class=" Dsmviz.Viewer.View.UserControls.LegendView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             mc:Ignorable="d"
+             Loaded="LegendView_OnLoaded"
+             d:DesignHeight="600" d:DesignWidth="400">
+    <Grid Width="Auto"  Height="Auto" Margin="10">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="auto" />
+        </Grid.RowDefinitions>
+        <TextBlock Grid.Row="0" Style="{StaticResource SideBarSectionStyle}" Text="Legend"/>
+        <StackPanel Grid.Row="1" Orientation="Horizontal" Visibility="{Binding SelectedViewPerspective, Converter={StaticResource DefaultIndicatorModeToVisibilityConverter}}">
+            <Rectangle Style="{StaticResource LegendRectangleStyle}" Fill="{StaticResource MatrixColorConsumer}" />
+            <TextBlock Style="{StaticResource LegendTextBlockStyle}">Consumer</TextBlock>
+        </StackPanel>
+        <StackPanel Grid.Row="2" Orientation="Horizontal" Visibility="{Binding SelectedViewPerspective, Converter={StaticResource DefaultIndicatorModeToVisibilityConverter}}">
+            <Rectangle Style="{StaticResource LegendRectangleStyle}" Fill="{StaticResource MatrixColorProvider}"/>
+            <TextBlock Style="{StaticResource LegendTextBlockStyle}">Provider</TextBlock>
+        </StackPanel>
+        <StackPanel Grid.Row="3" Orientation="Horizontal" Visibility="{Binding SelectedViewPerspective, Converter={StaticResource DefaultIndicatorModeToVisibilityConverter}}">
+            <Rectangle Style="{StaticResource LegendRectangleStyle}" Fill="{StaticResource MatrixColorViolation}"/>
+            <TextBlock Style="{StaticResource LegendTextBlockStyle}">Cycle</TextBlock>
+        </StackPanel>
+        <StackPanel Grid.Row="5" Orientation="Horizontal" Visibility="{Binding IsSearchActive, Converter={StaticResource SearchIndicatorModeToVisibilityConverter}}">
+            <Rectangle Style="{StaticResource LegendRectangleStyle}" Fill="{StaticResource MatrixColorMatch}"/>
+            <TextBlock Style="{StaticResource LegendTextBlockStyle}">Search match</TextBlock>
+        </StackPanel>
+        <StackPanel Grid.Row="6" Orientation="Horizontal" Visibility="{Binding SelectedViewPerspective, Converter={StaticResource BookmarkIndicatorModeToVisibilityConverter}}">
+            <Rectangle Style="{StaticResource LegendRectangleStyle}" Fill="{StaticResource MatrixColorBookmark}"/>
+            <TextBlock Style="{StaticResource LegendTextBlockStyle}">Bookmarked</TextBlock>
+        </StackPanel>
+    </Grid>
+</UserControl>

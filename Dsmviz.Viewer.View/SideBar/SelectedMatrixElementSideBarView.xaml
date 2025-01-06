@@ -1,0 +1,120 @@
+﻿<UserControl x:Class="Dsmviz.Viewer.View.SideBar.SelectedMatrixElementSideBarView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             mc:Ignorable="d" 
+             DataContext="{Binding ElementInfoViewModel}"
+             Visibility="{Binding Selected, Converter={StaticResource BooleanToVisibilityConverter}}"
+             Loaded="OnLoaded"
+             d:DesignHeight="600" d:DesignWidth="400">
+    <StackPanel Width="Auto"  Height="Auto" Style="{StaticResource SideBarStackPanelStyle}"  >
+        <TextBlock Style="{StaticResource SideBarTitleStyle}" Text="Selected element"/>
+
+        <TextBlock Style="{StaticResource SideBarSectionStyle}" Text="Details"/>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="{StaticResource SideBarRowHeight}" />
+                <RowDefinition Height="{StaticResource SideBarRowHeight}" />
+                <RowDefinition Height="{StaticResource SideBarRowHeight}" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="{StaticResource SideBarItemNameWidth}" />
+                <ColumnDefinition Width="{StaticResource SideBarItemSpacerWidth}" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <Label Grid.Row="0" Grid.Column="0" Style="{StaticResource SideBarItemNameStyle}" Content="Name" />
+            <Label Grid.Row="0" Grid.Column="2" Style="{StaticResource SideBarItemValueStyle}" Content="{Binding SelectedElement.Name, Mode=OneWay}" ToolTip="{Binding SelectedElement.Fullname, Mode=OneWay}"/>
+            <Label Grid.Row="1" Grid.Column="0" Style="{StaticResource SideBarItemNameStyle}" Content="Type" />
+            <Label Grid.Row="1" Grid.Column="2" Style="{StaticResource SideBarItemValueStyle}" Content="{Binding SelectedElement.Type, Mode=OneWay}" />
+            <StackPanel Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="3" Orientation="Horizontal">
+                <Button Style="{StaticResource DialogButton}" Content="Edit" />
+                <Button Style="{StaticResource DialogButton}" Content="Delete" />
+            </StackPanel>
+        </Grid>
+
+        <TextBlock Style="{StaticResource SideBarSectionStyle}" Text="Usage"/>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="{StaticResource SideBarRowHeight}" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="{StaticResource SideBarItemNameWidth}" />
+                <ColumnDefinition Width="{StaticResource SideBarItemSpacerWidth}" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="{StaticResource SideBarButtonWidth}" />
+            </Grid.ColumnDefinitions>
+
+            <Label Grid.Row="0" Grid.Column="0" Style="{StaticResource SideBarItemNameStyle}" Content="Consumers" />
+            <Label Grid.Row="0" Grid.Column="2" Style="{StaticResource SideBarItemValueStyle}" Content="{Binding ConsumerCount, Mode=OneWay}"/>
+            <Button Grid.Row="0" Grid.Column="3" Content="{StaticResource RightPointingTriangle}" ToolTip="Show list of consumers for selected element" Style="{StaticResource ArrowButton}" Visibility="{Binding ConsumerCount, Converter={StaticResource CountToVisibilityConverter}}" Command="{Binding ShowConsumerListCommand}"/>
+        </Grid>
+
+        <TextBlock Style="{StaticResource SideBarSectionStyle}" Text="Interfacing"/>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="{StaticResource SideBarRowHeight}" />
+                <RowDefinition Height="{StaticResource SideBarRowHeight}" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="{StaticResource SideBarItemNameWidth}" />
+                <ColumnDefinition Width="{StaticResource SideBarItemSpacerWidth}" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="{StaticResource SideBarButtonWidth}" />
+            </Grid.ColumnDefinitions>
+
+            <Label Grid.Row="0" Grid.Column="0" Style="{StaticResource SideBarItemNameStyle}" Content="Provided interfaces" />
+            <Label Grid.Row="0" Grid.Column="2" Style="{StaticResource SideBarItemValueStyle}" Content="{Binding ProvidedInterfaceCount, Mode=OneWay}" />
+            <Button Grid.Row="0" Grid.Column="3" Content="{StaticResource RightPointingTriangle}" ToolTip="Show list of interfaces provided by selected element" Style="{StaticResource ArrowButton}" Visibility="{Binding ProvidedInterfaceCount, Converter={StaticResource CountToVisibilityConverter}}" Command="{Binding ShowProvidedInterfaceListCommand}"/>
+
+            <Label Grid.Row="1" Grid.Column="0" Style="{StaticResource SideBarItemNameStyle}" Content="Required interfaces" />
+            <Label Grid.Row="1" Grid.Column="2" Style="{StaticResource SideBarItemValueStyle}" Content="{Binding RequiredInterfaceCount, Mode=OneWay}" />
+            <Button Grid.Row="1" Grid.Column="3" Content="{StaticResource RightPointingTriangle}" ToolTip="Show list of interfaces required by selected element" Style="{StaticResource ArrowButton}" Visibility="{Binding RequiredInterfaceCount, Converter={StaticResource CountToVisibilityConverter}}" Command="{Binding ShowRequiredInterfacesListCommand}"/>
+        </Grid>
+
+        <TextBlock Style="{StaticResource SideBarSectionStyle}" Text="Children"/>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="{StaticResource SideBarRowHeight}" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="{StaticResource SideBarItemNameWidth}" />
+                <ColumnDefinition Width="{StaticResource SideBarItemSpacerWidth}" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="{StaticResource SideBarButtonWidth}" />
+            </Grid.ColumnDefinitions>
+
+            <Label Grid.Row="0" Grid.Column="0" Style="{StaticResource SideBarItemNameStyle}" Content="Direct" />
+            <Label Grid.Row="0" Grid.Column="2" Style="{StaticResource SideBarItemValueStyle}" Content="{Binding ChildrenCount, Mode=OneWay}" />
+            <Button Grid.Row="0" Grid.Column="3" Content="{StaticResource RightPointingTriangle}" ToolTip="Show list of children of selected element" Style="{StaticResource ArrowButton}" Visibility="{Binding ChildrenCount, Converter={StaticResource CountToVisibilityConverter}}" Command="{Binding ShowChildListCommand}"/>
+        </Grid>
+
+        <TextBlock Style="{StaticResource SideBarSectionStyle}" Text="Relations"/>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="{StaticResource SideBarRowHeight}" />
+                <RowDefinition Height="{StaticResource SideBarRowHeight}" />
+                <RowDefinition Height="{StaticResource SideBarRowHeight}" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="{StaticResource SideBarItemNameWidth}" />
+                <ColumnDefinition Width="{StaticResource SideBarItemSpacerWidth}" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="{StaticResource SideBarButtonWidth}" />
+            </Grid.ColumnDefinitions>
+
+            <Label Grid.Row="0" Grid.Column="0" Style="{StaticResource SideBarItemNameStyle}" Content="Ingoing" />
+            <Label Grid.Row="0" Grid.Column="2" Style="{StaticResource SideBarItemValueStyle}" Content="{Binding IngoingRelationCount, Mode=OneWay}" />
+            <Button Grid.Row="0" Grid.Column="3" Content="{StaticResource RightPointingTriangle}" ToolTip="Show list of ingoing relations of selected element" Style="{StaticResource ArrowButton}" Visibility="{Binding IngoingRelationCount, Converter={StaticResource CountToVisibilityConverter}}" Command="{Binding ShowIngoingRelationsListCommand}"/>
+
+            <Label Grid.Row="1" Grid.Column="0" Style="{StaticResource SideBarItemNameStyle}" Content="Outgoing" />
+            <Label Grid.Row="1" Grid.Column="2" Style="{StaticResource SideBarItemValueStyle}" Content="{Binding OutgoingRelationCount, Mode=OneWay}" />
+            <Button Grid.Row="1" Grid.Column="3" Content="{StaticResource RightPointingTriangle}" ToolTip="Show list of outgoing relations of selected element" Style="{StaticResource ArrowButton}" Visibility="{Binding OutgoingRelationCount, Converter={StaticResource CountToVisibilityConverter}}" Command="{Binding ShowOutgoingRelationsListCommand}"/>
+
+            <Label Grid.Row="2" Grid.Column="0" Style="{StaticResource SideBarItemNameStyle}" Content="Internal" />
+            <Label Grid.Row="2" Grid.Column="2" Style="{StaticResource SideBarItemValueStyle}" Content="{Binding InternalRelationCount, Mode=OneWay}" />
+            <Button Grid.Row="2" Grid.Column="3" Content="{StaticResource RightPointingTriangle}" ToolTip="Show list of internal relations inside selected element" Style="{StaticResource ArrowButton}" Visibility="{Binding InternalRelationCount, Converter={StaticResource CountToVisibilityConverter}}" Command="{Binding ShowInternalRelationsListCommand}"/>
+        </Grid>
+
+    </StackPanel>
+</UserControl>

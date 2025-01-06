@@ -1,0 +1,80 @@
+﻿<UserControl x:Class="Dsmviz.Viewer.View.SideBar.ModelSideBarView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             mc:Ignorable="d" 
+             Loaded="OnLoaded"
+             DataContext="{Binding ModelInfoViewModel}"
+             Visibility="{Binding Selected, Converter={StaticResource BooleanToVisibilityConverter}}"
+             d:DesignHeight="600" d:DesignWidth="400">
+    <StackPanel Width="Auto"  Height="Auto" Style="{StaticResource SideBarStackPanelStyle}"  >
+
+        <TextBlock Grid.ColumnSpan="2" Style="{StaticResource SideBarTitleStyle}" Text="Model"/>
+
+        <TextBlock Style="{StaticResource SideBarSectionStyle}" Text="File"/>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="{StaticResource SideBarRowHeight}" />
+                <RowDefinition Height="{StaticResource SideBarRowHeight}"/>
+                <RowDefinition Height="{StaticResource SideBarRowHeight}" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="{StaticResource SideBarItemNameWidth}" />
+                <ColumnDefinition Width="{StaticResource SideBarItemSpacerWidth}" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <Label Grid.Row="0" Grid.Column="0" Style="{StaticResource SideBarItemNameStyle}" Content="Name" />
+            <Label Grid.Row="0" Grid.Column="2" Style="{StaticResource SideBarItemValueStyle}" Content="{Binding ModelName, Mode=OneWay}" />
+            <Label Grid.Row="1" Grid.Column="0" Style="{StaticResource SideBarItemNameStyle}" Content="Created date" />
+            <Label Grid.Row="1" Grid.Column="2" Style="{StaticResource SideBarItemValueStyle}" Content="{Binding ModelCreatedDate, Mode=OneWay}" />
+            <Label Grid.Row="2" Grid.Column="0" Style="{StaticResource SideBarItemNameStyle}" Content="Modified date" />
+            <Label Grid.Row="2" Grid.Column="2" Style="{StaticResource SideBarItemValueStyle}" Content="{Binding ModelModifiedDate, Mode=OneWay}" />
+        </Grid>
+
+        <TextBlock Style="{StaticResource SideBarSectionStyle}" Text="History"/>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="{StaticResource SideBarRowHeight}" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="{StaticResource SideBarItemNameWidth}" />
+                <ColumnDefinition Width="{StaticResource SideBarItemSpacerWidth}" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <Label Grid.Row="0" Grid.Column="0" Style="{StaticResource SideBarItemNameStyle}" Content="Revisions" />
+            <Label Grid.Row="0" Grid.Column="2" Style="{StaticResource SideBarItemValueStyle}" Content="{Binding ModelVersion, Mode=OneWay}" />
+        </Grid>
+
+        <TextBlock Style="{StaticResource SideBarSectionStyle}" Text="Performance"/>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="{StaticResource SideBarRowHeight}" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="{StaticResource SideBarItemNameWidth}" />
+                <ColumnDefinition Width="{StaticResource SideBarItemSpacerWidth}" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <Label Grid.Row="0" Grid.Column="0" Style="{StaticResource SideBarItemNameStyle}" Content="Loading time" />
+            <Label Grid.Row="0" Grid.Column="2" Style="{StaticResource SideBarItemValueStyle}" Content="{Binding ModelLoadingTimeInMilliseconds, Mode=OneWay}" />
+        </Grid>
+
+        <TextBlock Style="{StaticResource SideBarSectionStyle}" Text="Content"/>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="{StaticResource SideBarRowHeight}" />
+                <RowDefinition Height="{StaticResource SideBarRowHeight}"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="{StaticResource SideBarItemNameWidth}" />
+                <ColumnDefinition Width="{StaticResource SideBarItemSpacerWidth}" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <Label Grid.Row="0" Grid.Column="0" Style="{StaticResource SideBarItemNameStyle}" Content="Number of elements" />
+            <Label Grid.Row="0" Grid.Column="2" Style="{StaticResource SideBarItemValueStyle}" Content="{Binding NumberOfElements, Mode=OneWay}" />
+            <Label Grid.Row="1" Grid.Column="0" Style="{StaticResource SideBarItemNameStyle}" Content="Number of relations" />
+            <Label Grid.Row="1" Grid.Column="2" Style="{StaticResource SideBarItemValueStyle}" Content="{Binding NumberOfRelations, Mode=OneWay}" />
+        </Grid>
+    </StackPanel>
+</UserControl>

@@ -1,0 +1,62 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <Import Project="..\PropertySheets\Dsmviz.props" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x64</Platform>
+    <ProjectGuid>{20EE7931-AAB5-49E8-9FEB-381CA65DA85A}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Dsmviz.Application.Matrix.Interfaces</RootNamespace>
+    <AssemblyName>Dsmviz.Application.Matrix.Interfaces</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="RuleEventArgs.cs" />
+    <Compile Include="RuleViolationEventArgs.cs" />
+    <Compile Include="WeightEventArgs.cs" />
+    <Compile Include="CycleEventArgs.cs" />
+    <Compile Include="DerivedRuleState.cs" />
+    <Compile Include="IDerivedWeight.cs" />
+    <Compile Include="IDependencyCycleMatrix.cs" />
+    <Compile Include="RuleState.cs" />
+    <Compile Include="RuleViolation.cs" />
+    <Compile Include="Cycle.cs" />
+    <Compile Include="IMatrix.cs" />
+    <Compile Include="IRuleViolationMatrix.cs" />
+    <Compile Include="IDependencyWeightMatrix.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Dsmviz.Data.Entities\Dsmviz.Data.Entities.csproj">
+      <Project>{C21381A5-1E06-48C0-B262-8893DCB718D4}</Project>
+      <Name>Dsmviz.Data.Entities</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Dsmviz.Util.Core\Dsmviz.Util.Core.csproj">
+      <Project>{c2eb943f-4bb8-47bb-bdc1-7f6b607fb977}</Project>
+      <Name>Dsmviz.Util.Core</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

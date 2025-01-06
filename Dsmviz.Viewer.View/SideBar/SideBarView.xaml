@@ -1,0 +1,32 @@
+﻿<UserControl x:Class="Dsmviz.Viewer.View.SideBar.SideBarView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Dsmviz.Viewer.View.SideBar"
+             xmlns:userControls="clr-namespace:Dsmviz.Viewer.View.UserControls"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid Background="{StaticResource BackgroundColor}" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="30" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="60" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="100" />
+        </Grid.RowDefinitions>
+        <StackPanel Grid.Column="0" Grid.Row="0"  HorizontalAlignment="Left" VerticalAlignment="Stretch" Orientation="Horizontal">
+            <Button Content="{Binding IsEditViewExpanded, Converter={StaticResource EditExpandedToButtonContentConverter}}" Style="{StaticResource ArrowButton}" ToolTip="Expand/collapse edit view" Command="{Binding ToggleEditViewExpandedCommand}"/>
+        </StackPanel>
+
+        <StackPanel Grid.Column="1" Grid.Row="0"  Grid.RowSpan="2" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+            <local:ModelSideBarView/>
+            <local:SelectedMatrixCellSideBarView/>
+            <local:SelectedMatrixElementSideBarView/>
+        </StackPanel>
+
+        <userControls:LegendView Grid.Column="1" Grid.Row="2"/>
+    </Grid>
+</UserControl>

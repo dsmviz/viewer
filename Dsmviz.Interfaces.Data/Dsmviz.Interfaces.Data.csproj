@@ -1,0 +1,19 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <BaseOutputPath>..\build</BaseOutputPath>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Folder Include="Store\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Dsmviz.Viewer.Utils\Dsmviz.Viewer.Utils.csproj" />
+    <ProjectReference Include="..\Dsmviz.Interfaces.Util\Dsmviz.Interfaces.Util.csproj" />
+  </ItemGroup>
+
+</Project>
