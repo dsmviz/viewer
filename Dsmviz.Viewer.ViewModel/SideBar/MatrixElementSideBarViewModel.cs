@@ -9,7 +9,7 @@ using System.Windows.Input;
 
 namespace Dsmviz.Viewer.ViewModel.SideBar
 {
-    public class SelectedMatrixElementSideBarViewModel : ViewModelBase
+    public class MatrixElementSideBarViewModel : ViewModelBase
     {
         // Interfaces
         private readonly IElementEditing _elementEditing;
@@ -55,7 +55,7 @@ namespace Dsmviz.Viewer.ViewModel.SideBar
         public event EventHandler<ElementListViewModel>? ElementsReportReady;
         public event EventHandler<RelationListViewModel>? RelationsReportReady;
 
-        public SelectedMatrixElementSideBarViewModel(IElementEditing elementEditing, IElementQuery elementQuery, IRelationEditing relationEditing, IRelationQuery relationQuery, IMatrix matrix)
+        public MatrixElementSideBarViewModel(IElementEditing elementEditing, IElementQuery elementQuery, IRelationEditing relationEditing, IRelationQuery relationQuery, IMatrix matrix)
         {
             _elementEditing = elementEditing;
             _elementQuery = elementQuery;

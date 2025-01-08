@@ -23,8 +23,8 @@ namespace Dsmviz.Viewer.ViewModel.Settings
                 [Theme.Light] = LightThemeName
             };
 
-            LogLevel = ViewerSetting.LogLevel;
-            SelectedThemeName = _supportedThemes[ViewerSetting.Theme];
+            LogLevel = ViewerSettingStore.LogLevel;
+            SelectedThemeName = _supportedThemes[ViewerSettingStore.Theme];
 
             AcceptChangeCommand = RegisterCommand(AcceptChangeExecute, AcceptChangeCanExecute);
         }
@@ -55,8 +55,8 @@ namespace Dsmviz.Viewer.ViewModel.Settings
 
         private void AcceptChangeExecute(object? parameter)
         {
-            ViewerSetting.LogLevel = LogLevel;
-            ViewerSetting.Theme = _supportedThemes.FirstOrDefault(x => x.Value == SelectedThemeName).Key;
+            ViewerSettingStore.LogLevel = LogLevel;
+            ViewerSettingStore.Theme = _supportedThemes.FirstOrDefault(x => x.Value == SelectedThemeName).Key;
         }
 
         private bool AcceptChangeCanExecute(object? parameter)

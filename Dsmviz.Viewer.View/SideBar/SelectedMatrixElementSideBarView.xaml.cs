@@ -11,7 +11,7 @@ namespace Dsmviz.Viewer.View.SideBar
     /// </summary>
     public partial class SelectedMatrixElementSideBarView
     {
-        private SelectedMatrixElementSideBarViewModel? _viewModel;
+        private MatrixElementSideBarViewModel? _viewModel;
 
         public SelectedMatrixElementSideBarView()
         {
@@ -38,7 +38,7 @@ namespace Dsmviz.Viewer.View.SideBar
 
         private void OnLoaded(object sender, RoutedEventArgs e)
         {
-            _viewModel = DataContext as SelectedMatrixElementSideBarViewModel;
+            _viewModel = DataContext as MatrixElementSideBarViewModel;
             if (_viewModel != null)
             {
                 _viewModel.ElementsReportReady += OnElementsReportReady;

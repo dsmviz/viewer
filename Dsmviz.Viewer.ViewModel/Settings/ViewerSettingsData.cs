@@ -53,22 +53,7 @@ namespace Dsmviz.Viewer.ViewModel.Settings
             set => _theme = value;
         }
 
-        public static void WriteToFile(string filename, ViewerSettingsData viewerSettings)
-        {
-            XmlWriterSettings xmlWriterSettings = new XmlWriterSettings() { Indent = true };
-            XmlSerializer serializer = new XmlSerializer(typeof(ViewerSettingsData));
 
-            using XmlWriter xmlWriter = XmlWriter.Create(filename, xmlWriterSettings);
-            serializer.Serialize(xmlWriter, viewerSettings);
-        }
-
-        public static ViewerSettingsData? ReadFromFile(string filename)
-        {
-            XmlSerializer serializer = new XmlSerializer(typeof(ViewerSettingsData));
-
-            using XmlReader reader = XmlReader.Create(filename);
-            return (ViewerSettingsData?)serializer.Deserialize(reader);
-        }
     }
 }
 

@@ -5,13 +5,14 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:matrix="clr-namespace:Dsmviz.Viewer.View.Matrix"
              xmlns:matrix1="clr-namespace:Dsmviz.Viewer.ViewModel.Matrix;assembly=Dsmviz.Viewer.ViewModel"
+             xmlns:tooltips_vm="clr-namespace:Dsmviz.Viewer.ViewModel.Tooltips;assembly=Dsmviz.Viewer.ViewModel"             
              xmlns:sidebar="clr-namespace:Dsmviz.Viewer.View.SideBar"
              mc:Ignorable="d" 
              d:DesignHeight="300" d:DesignWidth="300"
              Margin="5"
              Background="{StaticResource BackgroundColor}">
     <UserControl.Resources>
-        <DataTemplate DataType="{x:Type matrix1:ElementToolTipViewModel}">
+        <DataTemplate DataType="{x:Type tooltips_vm:ElementToolTipViewModel}">
             <Grid>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="10" />
@@ -25,8 +26,9 @@
                     <RowDefinition Height="10" />
                     <RowDefinition Height="Auto" />
                     <RowDefinition Height="Auto" />
-                    <RowDefinition Height="10" />
                     <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="10" />
                 </Grid.RowDefinitions>
 
                 <TextBlock Style="{StaticResource RichToolTipTitleStyle}" Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="3" Text="{Binding Title}"/>
@@ -38,10 +40,14 @@
                 <TextBlock Style="{StaticResource RichToolTipPropertiesStyle}" Grid.Row="3" Grid.Column="1" Text="Name"/>
                 <TextBlock Style="{StaticResource RichToolTipPropertiesStyle}" Grid.Row="3" Grid.Column="2" Text=":"/>
                 <TextBlock Style="{StaticResource RichToolTipPropertiesStyle}" Grid.Row="3" Grid.Column="3" Text="{Binding Name}"/>
+
+                <TextBlock Style="{StaticResource RichToolTipPropertiesStyle}" Grid.Row="4" Grid.Column="1" Text="Type"/>
+                <TextBlock Style="{StaticResource RichToolTipPropertiesStyle}" Grid.Row="4" Grid.Column="2" Text=":"/>
+                <TextBlock Style="{StaticResource RichToolTipPropertiesStyle}" Grid.Row="4" Grid.Column="3" Text="{Binding Type}"/>
             </Grid>
         </DataTemplate>
 
-        <DataTemplate DataType="{x:Type matrix1:CellToolTipViewModel}">
+        <DataTemplate DataType="{x:Type tooltips_vm:CellToolTipViewModel}">
             <Grid>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="10" />

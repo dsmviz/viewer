@@ -27,8 +27,8 @@ namespace Dsmviz.Viewer.ViewModel.Matrix
         private int? _selectedProviderId;
 
         private readonly ModelSideBarViewModel _modelInfoViewModel;
-        private readonly SelectedMatrixElementSideBarViewModel _elementInfoViewModel;
-        private readonly SelectedMatrixCellSideBarViewModel _relationInfoViewModel;
+        private readonly MatrixElementSideBarViewModel _elementInfoViewModel;
+        private readonly MatrixCellSideBarViewModel _relationInfoViewModel;
 
         private readonly MatrixRowMetricsViewModel _matrixRowMetricsViewModel;
         private readonly MatrixMetricsSelectorViewModel _matrixMetricsSelectorViewModel;
@@ -61,8 +61,8 @@ namespace Dsmviz.Viewer.ViewModel.Matrix
             _matrixRowMetricsViewModel = new MatrixRowMetricsViewModel(this, applicationMetrics);
 
             _modelInfoViewModel = new ModelSideBarViewModel(persistency);
-            _elementInfoViewModel = new SelectedMatrixElementSideBarViewModel(elementEditing, elementQuery, relationEditing, relationQuery, applicationMatrix);
-            _relationInfoViewModel = new SelectedMatrixCellSideBarViewModel(relationEditing, relationQuery, applicationMatrix);
+            _elementInfoViewModel = new MatrixElementSideBarViewModel(elementEditing, elementQuery, relationEditing, relationQuery, applicationMatrix);
+            _relationInfoViewModel = new MatrixCellSideBarViewModel(relationEditing, relationQuery, applicationMatrix);
 
             ToggleMetricsViewExpandedCommand = RegisterCommand(ToggleMetricsViewExpandedExecute, ToggleMetricsViewExpandedCanExecute);
             ToggleEditViewExpandedCommand = RegisterCommand(ToggleEditViewExpandedExecute, ToggleEditViewExpandedCanExecute);
@@ -76,8 +76,8 @@ namespace Dsmviz.Viewer.ViewModel.Matrix
         }
 
         public ModelSideBarViewModel ModelInfoViewModel => _modelInfoViewModel;
-        public SelectedMatrixElementSideBarViewModel ElementInfoViewModel => _elementInfoViewModel;
-        public SelectedMatrixCellSideBarViewModel RelationInfoViewModel => _relationInfoViewModel;
+        public MatrixElementSideBarViewModel ElementInfoViewModel => _elementInfoViewModel;
+        public MatrixCellSideBarViewModel RelationInfoViewModel => _relationInfoViewModel;
 
         public IMatrixMetricsSelectorViewModel MatrixMetricsSelectorViewModel => _matrixMetricsSelectorViewModel;
         public IMatrixRowMetricsViewModel MatrixRowMetricsViewModel => _matrixRowMetricsViewModel;

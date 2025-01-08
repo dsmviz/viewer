@@ -1,9 +1,11 @@
 ﻿
 using Dsmviz.Viewer.Utils;
+using System.Xml.Serialization;
+using System.Xml;
 
 namespace Dsmviz.Viewer.ViewModel.Settings
 {
-    public static class ViewerSetting
+    public static class ViewerSettingStore
     {
         private static readonly string ApplicationSettingsFolder = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "Dsmviz");
         private static readonly string SettingsFilePath = Path.Combine(ApplicationSettingsFolder, "ViewerSettings.xml");
@@ -20,11 +22,11 @@ namespace Dsmviz.Viewer.ViewModel.Settings
             FileInfo settingsFileInfo = new FileInfo(SettingsFilePath);
             if (!settingsFileInfo.Exists)
             {
-                ViewerSettingsData.WriteToFile(SettingsFilePath, _viewerSettings);
+                WriteToFile(SettingsFilePath, _viewerSettings);
             }
             else
             {
-                _viewerSettings = ViewerSettingsData.ReadFromFile(settingsFileInfo.FullName);
+                _viewerSettings = ReadFromFile(settingsFileInfo.FullName);
             }
         }
 
@@ -42,7 +44,24 @@ namespace Dsmviz.Viewer.ViewModel.Settings
 
         public static void Write()
         {
-            ViewerSettingsData.WriteToFile(SettingsFilePath, _viewerSettings);
+            WriteToFile(SettingsFilePath, _viewerSettings);
+        }
+
+        private static void WriteToFile(string filename, ViewerSettingsData viewerSettings)
+        {
+            XmlWriterSettings xmlWriterSettings = new XmlWriterSettings() { Indent = true };
+            XmlSerializer serializer = new XmlSerializer(typeof(ViewerSettingsData));
+
+            using XmlWriter xmlWriter = XmlWriter.Create(filename, xmlWriterSettings);
+            serializer.Serialize(xmlWriter, viewerSettings);
+        }
+
+        private static ViewerSettingsData? ReadFromFile(string filename)
+        {
+            XmlSerializer serializer = new XmlSerializer(typeof(ViewerSettingsData));
+
+            using XmlReader reader = XmlReader.Create(filename);
+            return (ViewerSettingsData?)serializer.Deserialize(reader);
         }
     }
 }

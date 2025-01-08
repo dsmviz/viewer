@@ -1,4 +1,5 @@
-﻿using System.ComponentModel;
+﻿using Dsmviz.Viewer.ViewModel.Tooltips;
+using System.ComponentModel;
 
 namespace Dsmviz.Viewer.ViewModel.Matrix
 {

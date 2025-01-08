@@ -10,7 +10,7 @@ namespace Dsmviz.Viewer.View.SideBar
     /// </summary>
     public partial class SelectedMatrixCellSideBarView
     {
-        private SelectedMatrixCellSideBarViewModel? _viewModel;
+        private MatrixCellSideBarViewModel? _viewModel;
 
         public SelectedMatrixCellSideBarView()
         {
@@ -28,7 +28,7 @@ namespace Dsmviz.Viewer.View.SideBar
 
         private void OnLoaded(object sender, RoutedEventArgs e)
         {
-            _viewModel = DataContext as SelectedMatrixCellSideBarViewModel;
+            _viewModel = DataContext as MatrixCellSideBarViewModel;
             if (_viewModel != null)
             {
                 _viewModel.RelationsReportReady += OnRelationsReportReady;

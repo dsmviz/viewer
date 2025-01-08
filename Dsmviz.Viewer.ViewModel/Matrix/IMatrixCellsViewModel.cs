@@ -1,5 +1,6 @@
 ﻿using Dsmviz.Interfaces.Application.Matrix;
 using Dsmviz.Viewer.ViewModel.Common;
+using Dsmviz.Viewer.ViewModel.Tooltips;
 using System.ComponentModel;
 
 namespace Dsmviz.Viewer.ViewModel.Matrix

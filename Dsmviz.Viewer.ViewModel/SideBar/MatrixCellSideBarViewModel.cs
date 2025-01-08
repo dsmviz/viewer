@@ -10,7 +10,7 @@ using System.Windows.Input;
 
 namespace Dsmviz.Viewer.ViewModel.SideBar
 {
-    public class SelectedMatrixCellSideBarViewModel : ViewModelBase
+    public class MatrixCellSideBarViewModel : ViewModelBase
     {
         // Interfaces
         private readonly IRelationEditing _relationEditing;
@@ -35,7 +35,7 @@ namespace Dsmviz.Viewer.ViewModel.SideBar
 
         public event EventHandler<RelationListViewModel>? RelationsReportReady;
 
-        public SelectedMatrixCellSideBarViewModel(IRelationEditing relationEditing, IRelationQuery relationQuery, IMatrix matrix)
+        public MatrixCellSideBarViewModel(IRelationEditing relationEditing, IRelationQuery relationQuery, IMatrix matrix)
         {
             _relationEditing = relationEditing;
             _relationQuery = relationQuery;

@@ -1,9 +1,7 @@
-﻿
-
-using Dsmviz.Interfaces.Data.Entities;
+﻿using Dsmviz.Interfaces.Data.Entities;
 using Dsmviz.Viewer.ViewModel.Common;
 
-namespace Dsmviz.Viewer.ViewModel.Matrix
+namespace Dsmviz.Viewer.ViewModel.Tooltips
 {
     public class CellToolTipViewModel(IElement consumer, IElement provider) : ViewModelBase
     {
