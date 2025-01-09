@@ -21,6 +21,7 @@
     <SolidColorBrush x:Key="MatrixColor1" po:Freeze="True">#0E2630</SolidColorBrush>
     <SolidColorBrush x:Key="MatrixColor2" po:Freeze="True">#302E33</SolidColorBrush>
     <SolidColorBrush x:Key="MatrixColor3" po:Freeze="True">#454748</SolidColorBrush>
+    
     <SolidColorBrush x:Key="MatrixColorViolation" po:Freeze="True">#F4D03F</SolidColorBrush>
     <SolidColorBrush x:Key="MatrixColorConsumer" po:Freeze="True">#a4ab47</SolidColorBrush>
     <SolidColorBrush x:Key="MatrixColorProvider" po:Freeze="True">#90c1d7</SolidColorBrush>
@@ -31,6 +32,99 @@
     <SolidColorBrush x:Key="MatrixColorRuleException" po:Freeze="True">#a020f0</SolidColorBrush>
     <SolidColorBrush x:Key="MatrixColorRuleForbidden" po:Freeze="True">#ff0000</SolidColorBrush>
 
+    <!--
+    Based on the provided main colors, which are:
+
+MatrixColorBackground: #222324
+MatrixColor1: #0E2630
+MatrixColor2: #302E33
+MatrixColor3: #454748
+
+Here are some accent color suggestions for each of these colors:
+1. Accent Colors for #222324 (MatrixColorBackground)
+Tint (Lighter): #4B4C4D (a lighter version)
+Shade (Darker): #1A1B1B (a darker version)
+Complementary: #DBDCDD (opposite color)
+Analogous: #1F2122 and #2D2E2F
+2. Accent Colors for #0E2630 (MatrixColor1)
+Tint: #3A5B61 (lighter)
+Shade: #0B1E22 (darker)
+Complementary: #D9B2B2 (opposite color)
+Analogous: #0E3A3D and #0E1F25
+3. Accent Colors for #302E33 (MatrixColor2)
+Tint: #585659 (lighter)
+Shade: #252326 (darker)
+Complementary: #CFCFD2 (opposite color)
+Analogous: #303A3C and #2F2C2F
+4. Accent Colors for #454748 (MatrixColor3)
+Tint: #707374 (lighter)
+Shade: #353738 (darker)
+Complementary: #B8B8B9 (opposite color)
+Analogous: #454C4D and #464B4C
+    
+    Can you provide matching hex colors for yellow, red, orange, blue, green, pink, purple
+
+Certainly! Here are matching hex colors for yellow, red, orange, blue, green, pink, and purple that can complement your existing palette (which is quite dark and muted). These suggestions are based on creating a balanced and harmonious color scheme:
+
+Matching Hex Colors
+ 
+
+Yellow
+Hex: #F4D03F
+Description: A warm, vibrant yellow that provides a bright contrast to the darker colors.
+Red
+Hex: #E74C3C
+Description: A bold, lively red that stands out well against darker backgrounds.
+Orange
+Hex: #E67E22
+Description: A warm orange that can add vibrancy and energy to your UI.
+Blue
+Hex: #3498DB
+Description: A bright and fresh blue that complements the darker shades while still being visually appealing.
+Green
+Hex: #2ECC71
+Description: A lively green that adds a natural and refreshing touch to your palette.
+Pink
+Hex: #D81B60
+Description: A vibrant pink that can bring a playful and modern feel to your design.
+Purple
+Hex: #9B59B6
+Description: A rich purple that offers a sophisticated and elegant contrast to darker colors.
+Summary
+These colors can work well as accent colors against your existing dark color palette, providing contrast and visual interest. When incorporating these colors, consider how they interact with your main colors and test them for accessibility to ensure readability and a cohesive design. If you need further adjustments or specific tones, let me know!
+    
+    For #222324 (MatrixColorBackground)
+Tint 1: #4A4C4D (a light grayish color)
+Tint 2: #7D7F80 (a soft, light gray)
+For #0E2630 (MatrixColor1)
+Tint 1: #3A5B61 (a muted teal)
+Tint 2: #6C9A9E (a soft teal)
+For #302E33 (MatrixColor2)
+Tint 1: #585659 (a light gray with a hint of warmth)
+Tint 2: #B0B1B3 (a very light gray)
+For #454748 (MatrixColor3)
+Tint 1: #707374 (a light, cool gray)
+Tint 2: #A4A6A7 (a soft, light gray)
+    
+    For Dark Backgrounds (like #222324, #0E2630, #302E33, #454748):
+White: #FFFFFF - This is the most common choice for dark backgrounds, providing high contrast and excellent readability.
+Light Gray: #E0E0E0 - A softer alternative to pure white that can reduce glare while still ensuring good readability.
+Pastel Colors: Light pastel shades (e.g., #B2C9D9 for a light blue) can add a bit of color while remaining readable.
+For Accent Colors (like those suggested earlier):
+Black or Very Dark Gray: #000000 or #1C1C1C - Suitable for lighter tints like #4A4C4D or #3A5B61.
+Complementary Colors: If you're using the vibrant colors suggested (yellow, red, etc.), you can pair them with a very dark version of their hue or use black for contrast.
+Example Combinations
+Using White on Dark Background:
+Background: #222324
+Text: #FFFFFF (white)
+Using Light Gray on Dark Background:
+Background: #0E2630
+Text: #E0E0E0 (light gray)
+Using Dark Gray on Light Tint:
+Background: #4A4C4D
+Text: #1C1C1C (dark gray)
+    
+    -->
     <sys:Double x:Key="HighlightFactorHovered" >1.1</sys:Double>
     <sys:Double x:Key="HighlightFactorSelected" >1.2</sys:Double>
 </ResourceDictionary>
