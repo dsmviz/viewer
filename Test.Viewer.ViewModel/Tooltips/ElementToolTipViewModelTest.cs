@@ -1,4 +1,4 @@
-namespace Test.Viewer.ViewModel.Tooltips;
+namespace Dsmviz.Test.ViewModel.Tooltips;
 
 [TestClass]
 public class ElementToolTipViewModelTest

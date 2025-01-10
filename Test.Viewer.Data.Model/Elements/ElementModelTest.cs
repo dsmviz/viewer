@@ -5,7 +5,7 @@ using Dsmviz.Viewer.Data.Model.Elements;
 using Dsmviz.Viewer.Data.Model.Relations;
 using Moq;
 
-namespace Test.Viewer.Data.Model.Elements
+namespace Dsmviz.Test.Data.Model.Elements
 {
     [TestClass]
     public class ElementModelTest

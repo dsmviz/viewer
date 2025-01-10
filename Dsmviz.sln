@@ -57,33 +57,33 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dsmviz.Viewer.Application.A
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Application", "Application", "{8AF46340-4CFA-434E-8C2C-B7D69E07386E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Test.Viewer.Util", "Test.Viewer.Util\Test.Viewer.Util.csproj", "{1AEC0316-F0AA-46C7-AAD2-085AC0026DCA}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dsmviz.Test.Util", "Test.Viewer.Util\Dsmviz.Test.Util.csproj", "{1AEC0316-F0AA-46C7-AAD2-085AC0026DCA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Test.Viewer.Data.Store", "Test.Viewer.Data.Store\Test.Viewer.Data.Store.csproj", "{1DEA16DF-A319-43FB-9B7A-15FF9BA4248F}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dsmviz.Test.Data.Store", "Test.Viewer.Data.Store\Dsmviz.Test.Data.Store.csproj", "{1DEA16DF-A319-43FB-9B7A-15FF9BA4248F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Test.Viewer.Data.Model", "Test.Viewer.Data.Model\Test.Viewer.Data.Model.csproj", "{CF9D7069-2B78-41C8-BD43-E8CE6945E44A}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dsmviz.Test.Data.Model", "Test.Viewer.Data.Model\Dsmviz.Test.Data.Model.csproj", "{CF9D7069-2B78-41C8-BD43-E8CE6945E44A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Test.Viewer.Data.Import.Dsi", "Test.Viewer.Data.Import.Dsi\Test.Viewer.Data.Import.Dsi.csproj", "{A7EB4647-96B9-41CD-9738-0E486AFD42AE}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dsmviz.Test.Data.Import.Dsi", "Test.Viewer.Data.Import.Dsi\Dsmviz.Test.Data.Import.Dsi.csproj", "{A7EB4647-96B9-41CD-9738-0E486AFD42AE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Test.Viewer.Application.Algorithms", "Test.Viewer.Application.Algorithms\Test.Viewer.Application.Algorithms.csproj", "{22FC135F-E6EF-491B-88B3-80344911662D}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dsmviz.Test.Application.Algorithms", "Test.Viewer.Application.Algorithms\Dsmviz.Test.Application.Algorithms.csproj", "{22FC135F-E6EF-491B-88B3-80344911662D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Test.Viewer.Application.Algorithms.Alphabetic", "Test.Viewer.Application.Algorithms.Alphabetic\Test.Viewer.Application.Algorithms.Alphabetic.csproj", "{5549AB7C-A1BA-4CFA-876C-0FD53AB82EF1}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dsmviz.Test.Application.Algorithms.Alphabetic", "Test.Viewer.Application.Algorithms.Alphabetic\Dsmviz.Test.Application.Algorithms.Alphabetic.csproj", "{5549AB7C-A1BA-4CFA-876C-0FD53AB82EF1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Test.Viewer.Application.Algorithms.Partition", "Test.Viewer.Application.Algorithms.Partition\Test.Viewer.Application.Algorithms.Partition.csproj", "{A65D46B8-2FEF-4A30-8D7D-D9BAB4A04A24}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dsmviz.Test.Application.Algorithms.Partition", "Test.Viewer.Application.Algorithms.Partition\Dsmviz.Test.Application.Algorithms.Partition.csproj", "{A65D46B8-2FEF-4A30-8D7D-D9BAB4A04A24}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Test.Viewer.Application.Editing", "Test.Viewer.Application.Editing\Test.Viewer.Application.Editing.csproj", "{A81ABBEF-F455-4E14-8190-B154CA02330F}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dsmviz.Test.Application.Editing", "Test.Viewer.Application.Editing\Dsmviz.Test.Application.Editing.csproj", "{A81ABBEF-F455-4E14-8190-B154CA02330F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Test.Viewer.Application.Matrix", "Test.Viewer.Application.Matrix\Test.Viewer.Application.Matrix.csproj", "{C7C0D74E-29A2-45DF-BB69-3056E0D57CAB}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dsmviz.Test.Application.Matrix", "Test.Viewer.Application.Matrix\Dsmviz.Test.Application.Matrix.csproj", "{C7C0D74E-29A2-45DF-BB69-3056E0D57CAB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Test.Viewer.Application.Metrics", "Test.Viewer.Application.Metrics\Test.Viewer.Application.Metrics.csproj", "{AAC76E7D-83B4-4533-ABFE-7B503AFBAD31}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dsmviz.Test.Application.Metrics", "Test.Viewer.Application.Metrics\Dsmviz.Test.Application.Metrics.csproj", "{AAC76E7D-83B4-4533-ABFE-7B503AFBAD31}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Test.Viewer.Application.Persistency", "Test.Viewer.Application.Persistency\Test.Viewer.Application.Persistency.csproj", "{77F5C0B7-479B-4098-A8F6-F2E29CA765F4}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dsmviz.Test.Application.Persistency", "Test.Viewer.Application.Persistency\Dsmviz.Test.Application.Persistency.csproj", "{77F5C0B7-479B-4098-A8F6-F2E29CA765F4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Test.Viewer.Application.Query", "Test.Viewer.Application.Query\Test.Viewer.Application.Query.csproj", "{1E531058-3E0A-4CD6-84AB-89E5538D2199}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dsmviz.Test.Application.Query", "Test.Viewer.Application.Query\Dsmviz.Test.Application.Query.csproj", "{1E531058-3E0A-4CD6-84AB-89E5538D2199}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dsmviz.Viewer.Algorithms.Common", "Dsmviz.Viewer.Algorithms.Common\Dsmviz.Viewer.Algorithms.Common.csproj", "{BB86107B-C0CB-47A3-8C8A-74DDE9CDEDF9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Test.Viewer.Application.Algorithms.Common", "Test.Viewer.Application.Algorithms.Common\Test.Viewer.Application.Algorithms.Common.csproj", "{3382A59D-F95C-40E1-B1FE-1FAB27A37F82}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dsmviz.Test.Application.Algorithms.Common", "Test.Viewer.Application.Algorithms.Common\Dsmviz.Test.Application.Algorithms.Common.csproj", "{3382A59D-F95C-40E1-B1FE-1FAB27A37F82}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ViewModel", "ViewModel", "{310604E1-E315-429A-A43F-712A1D3D06C7}"
 EndProject
@@ -99,7 +99,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Configuration", "Configurat
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dsmviz.Viewer.Configuration", "Dsmviz.Viewer.Configuration\Dsmviz.Viewer.Configuration.csproj", "{CC057A1F-4756-489A-8763-300AEAE1D07D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Test.Viewer.ViewModel", "Test.Viewer.ViewModel\Test.Viewer.ViewModel.csproj", "{8216BD3A-3187-4EC2-AA55-23D269122B1D}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dsmviz.Test.ViewModel", "Test.Viewer.ViewModel\Dsmviz.Test.ViewModel.csproj", "{8216BD3A-3187-4EC2-AA55-23D269122B1D}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ViewModel", "ViewModel", "{06A9819D-42D5-4D92-B469-2C373720B42D}"
 EndProject

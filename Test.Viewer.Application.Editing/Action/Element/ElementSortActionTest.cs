@@ -4,7 +4,7 @@ using Dsmviz.Interfaces.Data.Model.Elements;
 using Dsmviz.Viewer.Application.Editing.Action.Element;
 using Moq;
 
-namespace Test.Viewer.Application.Editing.Action.Element
+namespace Dsmviz.Test.Application.Editing.Action.Element
 {
     [TestClass]
     public class ElementSortActionTest

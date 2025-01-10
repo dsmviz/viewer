@@ -2,7 +2,7 @@
 using Dsmviz.Viewer.Utils;
 using System.Reflection;
 
-namespace Test.Viewer.Data.Store
+namespace Dsmviz.Test.Data.Store
 {
     [TestClass]
     public class SetupAssemblyInitializer

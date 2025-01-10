@@ -6,7 +6,7 @@ using Dsmviz.Viewer.Data.Model.Facade;
 using Dsmviz.Viewer.Data.Store;
 using Moq;
 
-namespace Test.Viewer.Data.Store
+namespace Dsmviz.Test.Data.Store
 {
     /// <summary>
     /// Dependency matrix used for tests:
@@ -44,7 +44,7 @@ namespace Test.Viewer.Data.Store
         public void TestLoadModel()
         {
             IDataModel dataModel = new CoreDataModel();
-            string inputFile = "Test.Viewer.Data.Store.Validation.Input.dsm";
+            string inputFile = "Dsmviz.Test.Data.Store.Validation.Input.dsm";
             CoreDsmFile readModelFile = new CoreDsmFile(inputFile,
                 dataModel);
             readModelFile.Load(_fileProgress.Object);
@@ -248,8 +248,8 @@ namespace Test.Viewer.Data.Store
         {
             IDataModel dataModel = new CoreDataModel();
 
-            string inputFile = "Test.Viewer.Data.Store.Validation.Input.dsm";
-            string outputFile = "Test.Viewer.Data.Store.Validation.Output.dsm";
+            string inputFile = "Dsmviz.Test.Data.Store.Validation.Input.dsm";
+            string outputFile = "Dsmviz.Test.Data.Store.Validation.Output.dsm";
 
             FillModelData(dataModel);
 

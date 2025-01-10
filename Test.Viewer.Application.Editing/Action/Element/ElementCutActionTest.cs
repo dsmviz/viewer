@@ -1,4 +1,4 @@
-﻿namespace Test.Viewer.Application.Editing.Action.Element
+﻿namespace Dsmviz.Test.Application.Editing.Action.Element
 {
     [TestClass]
     public class ElementCutActionTest

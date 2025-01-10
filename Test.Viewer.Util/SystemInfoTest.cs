@@ -1,7 +1,7 @@
 ﻿using Dsmviz.Viewer.Utils;
 using System.Reflection;
 
-namespace Test.Viewer.Util
+namespace Dsmviz.Test.Util
 {
     [TestClass]
     public class SystemInfoTest
@@ -17,7 +17,7 @@ namespace Test.Viewer.Util
             string[] elements = executableInfo.Split(itemSeparators);
             Assert.IsTrue(elements.Length >= 6); // Depending on locale PM/AM might be post fixed
 
-            Assert.AreEqual("Test.Viewer.Util", elements[0]);
+            Assert.AreEqual("Dsmviz.Test.Util", elements[0]);
         }
 
         [TestMethod]

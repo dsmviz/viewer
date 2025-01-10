@@ -2,7 +2,7 @@
 using Dsmviz.Viewer.Application.Editing.Action.Management;
 using Moq;
 
-namespace Test.Viewer.Application.Editing.Action.Management
+namespace Dsmviz.Test.Application.Editing.Action.Management
 {
     [TestClass]
     public class ActionManagerTest

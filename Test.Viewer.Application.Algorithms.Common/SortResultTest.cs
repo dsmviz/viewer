@@ -2,7 +2,7 @@
 
 using Dsmviz.Viewer.Algorithms.Common;
 
-namespace Test.Viewer.Application.Algorithms.Common
+namespace Dsmviz.Test.Application.Algorithms.Common
 {
     [TestClass]
     public class SortResultTest

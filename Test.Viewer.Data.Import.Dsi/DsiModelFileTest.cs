@@ -7,7 +7,7 @@ using Dsmviz.Viewer.Data.Model.Entities;
 using Dsmviz.Viewer.Data.Model.Facade;
 using Moq;
 
-namespace Test.Viewer.Data.Import.Dsi
+namespace Dsmviz.Test.Data.Import.Dsi
 {
     [TestClass]
     public class DsiModelFileTest
@@ -23,7 +23,7 @@ namespace Test.Viewer.Data.Import.Dsi
         [TestMethod]
         public void GivenDataModelIsClean_WhenModelIsImported_ThenModelIsFilled()
         {
-            string inputFilename = "Test.Viewer.Data.Import.Dsi.Validation.Input.dsi";
+            string inputFilename = "Dsmviz.Test.Data.Import.Dsi.Validation.Input.dsi";
 
             DsiModel dsiModel = new DsiModel(_dataModel, _dataModel);
             dsiModel.ImportModel(inputFilename, true, _fileProgress.Object);

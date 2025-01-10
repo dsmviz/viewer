@@ -4,7 +4,7 @@ using Dsmviz.Viewer.Application.Matrix;
 using Dsmviz.Viewer.Utils;
 using Moq;
 
-namespace Test.Viewer.Application.Matrix
+namespace Dsmviz.Test.Application.Matrix
 {
 
     //    /// <summary>

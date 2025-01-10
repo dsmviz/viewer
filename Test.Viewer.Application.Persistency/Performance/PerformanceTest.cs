@@ -5,7 +5,7 @@ using Microsoft.VisualStudio.TestPlatform.MSTest.TestAdapter.ObjectModel;
 using Moq;
 using System.Diagnostics;
 
-namespace Test.Viewer.Application.Persistency.Performance
+namespace Dsmviz.Test.Application.Persistency.Performance
 {
     /// <summary>
     /// Summary description for PerformanceTest

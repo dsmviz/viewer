@@ -3,7 +3,7 @@ using Dsmviz.Interfaces.Data.Entities;
 using Dsmviz.Viewer.Application.Algorithms.Alphabetic;
 using Moq;
 
-namespace Test.Viewer.Application.Algorithms.Alphabetic
+namespace Dsmviz.Test.Application.Algorithms.Alphabetic
 {
     [TestClass]
     public class AlphabeticalSortAlgorithmTest

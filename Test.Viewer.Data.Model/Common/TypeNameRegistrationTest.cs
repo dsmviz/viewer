@@ -2,7 +2,7 @@
 
 using Dsmviz.Viewer.Data.Model.Common;
 
-namespace Test.Viewer.Data.Model.Common
+namespace Dsmviz.Test.Data.Model.Common
 {
     [TestClass]
     public class TypeNameRegistrationTest

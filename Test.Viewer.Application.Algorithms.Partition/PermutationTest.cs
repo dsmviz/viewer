@@ -1,6 +1,6 @@
 ﻿using Dsmviz.Viewer.Application.Algorithms.Partition;
 
-namespace Test.Viewer.Application.Algorithms.Partition
+namespace Dsmviz.Test.Application.Algorithms.Partition
 {
     [TestClass]
     public class PermutationTest

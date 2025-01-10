@@ -1,6 +1,6 @@
 ﻿using Dsmviz.Viewer.Utils;
 
-namespace Test.Viewer.Util
+namespace Dsmviz.Test.Util
 {
     [TestClass]
     public class ElementNameTest

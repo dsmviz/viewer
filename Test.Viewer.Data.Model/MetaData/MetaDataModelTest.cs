@@ -3,7 +3,7 @@
 using Dsmviz.Interfaces.Data.Entities;
 using Dsmviz.Viewer.Data.Model.MetaData;
 
-namespace Test.Viewer.Data.Model.MetaData
+namespace Dsmviz.Test.Data.Model.MetaData
 {
     [TestClass]
     public class MetaDataModelTest

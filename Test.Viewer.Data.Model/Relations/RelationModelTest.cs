@@ -3,7 +3,7 @@ using Dsmviz.Interfaces.Data.Entities;
 using Dsmviz.Viewer.Data.Model.Elements;
 using Dsmviz.Viewer.Data.Model.Relations;
 
-namespace Test.Viewer.Data.Model.Relations
+namespace Dsmviz.Test.Data.Model.Relations
 {
     [TestClass]
     public class RelationModelTest

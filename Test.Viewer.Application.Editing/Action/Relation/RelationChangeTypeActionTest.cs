@@ -3,7 +3,7 @@ using Dsmviz.Interfaces.Data.Model.Relations;
 using Dsmviz.Viewer.Application.Editing.Action.Relation;
 using Moq;
 
-namespace Test.Viewer.Application.Editing.Action.Relation
+namespace Dsmviz.Test.Application.Editing.Action.Relation
 {
     [TestClass]
     public class RelationChangeTypeActionTest

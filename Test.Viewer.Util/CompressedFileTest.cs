@@ -2,7 +2,7 @@
 using Dsmviz.Viewer.Utils;
 using Moq;
 
-namespace Test.Viewer.Util
+namespace Dsmviz.Test.Util
 {
     [TestClass]
     public class CompressedFileTest

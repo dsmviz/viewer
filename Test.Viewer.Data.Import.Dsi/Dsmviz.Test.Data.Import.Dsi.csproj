@@ -25,8 +25,8 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Dsmviz.Viewer.Data.Import.Dsi\Dsmviz.Viewer.Data.Import.Dsi.csproj" />
     <ProjectReference Include="..\Dsmviz.Viewer.Data.Model\Dsmviz.Viewer.Data.Model.csproj" />
-    <ProjectReference Include="..\Dsmviz.Viewer.Data.Store\Dsmviz.Viewer.Data.Store.csproj" />
     <ProjectReference Include="..\Dsmviz.Interfaces.Data\Dsmviz.Interfaces.Data.csproj" />
   </ItemGroup>
 
@@ -35,10 +35,13 @@
   </ItemGroup>
 
   <ItemGroup>
-    <None Update="Test.Viewer.Data.Store.Performance.Input.dsm">
+    <Compile Update="MSTestSettings.cs">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Update="Test.Viewer.Data.Store.Validation.Input.dsm">
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="Dsmviz.Test.Data.Import.Dsi.Validation.Input.dsi">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
   </ItemGroup>

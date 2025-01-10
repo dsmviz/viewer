@@ -4,7 +4,7 @@ using Dsmviz.Viewer.Data.Store;
 using Moq;
 using System.Diagnostics;
 
-namespace Test.Viewer.Data.Store
+namespace Dsmviz.Test.Data.Store
 {
     /// <summary>
     /// Summary description for PerformanceTest
@@ -27,7 +27,7 @@ namespace Test.Viewer.Data.Store
             Console.WriteLine($"Peak paged memory usage    {peakPagedMemMbBefore:0.000}MB");
             Console.WriteLine($"Peak virtual memory usage  {peakVirtualMemMbBefore:0.000}MB");
 
-            string inputFilename = "Test.Viewer.Data.Store.Performance.Input.dsm";
+            string inputFilename = "Dsmviz.Test.Data.Store.Performance.Input.dsm";
 
             CoreDataModel model = new CoreDataModel();
             CoreDataStore dsm = new CoreDataStore(model);
@@ -68,8 +68,8 @@ namespace Test.Viewer.Data.Store
             Console.WriteLine($"Peak paged memory usage    {peakPagedMemMbBefore:0.000}MB");
             Console.WriteLine($"Peak virtual memory usage  {peakVirtualMemMbBefore:0.000}MB");
 
-            string inputFilename = "Test.Viewer.Data.Store.Performance.Input.dsm";
-            string outputFilename = "Test.Viewer.Data.Store.Performance.Output.dsm";
+            string inputFilename = "Dsmviz.Test.Data.Store.Performance.Input.dsm";
+            string outputFilename = "Dsmviz.Test.Data.Store.Performance.Output.dsm";
 
             CoreDataModel model = new CoreDataModel();
             CoreDataStore dsm = new CoreDataStore(model);

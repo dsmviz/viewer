@@ -4,7 +4,7 @@ using Dsmviz.Interfaces.Data.Entities;
 using Dsmviz.Viewer.Application.Editing.Data;
 using Moq;
 
-namespace Test.Viewer.Application.Editing.Data
+namespace Dsmviz.Test.Application.Editing.Data
 {
     [TestClass]
     public class ElementWeightsMatrixTest
