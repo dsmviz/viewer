@@ -1,4 +1,5 @@
-﻿using Dsmviz.Interfaces.Application.Editing;
+﻿using System.ComponentModel;
+using Dsmviz.Interfaces.Application.Editing;
 using Dsmviz.Interfaces.Application.Matrix;
 using Dsmviz.Interfaces.Application.Query;
 using Dsmviz.Interfaces.Data.Entities;
@@ -6,10 +7,13 @@ using Dsmviz.Viewer.ViewModel.Common;
 using Dsmviz.Viewer.ViewModel.Lists.Element;
 using Dsmviz.Viewer.ViewModel.Lists.Relation;
 using System.Windows.Input;
+using Dsmviz.ViewModel.Interfaces.Lists.Element;
+using Dsmviz.ViewModel.Interfaces.Lists.Relation;
+using Dsmviz.ViewModel.Interfaces.Sidebar;
 
 namespace Dsmviz.Viewer.ViewModel.SideBar
 {
-    public class MatrixElementSideBarViewModel : ViewModelBase
+    public class MatrixElementSideBarViewModel : ViewModelBase, IMatrixElementSideBarViewModel
     {
         // Interfaces
         private readonly IElementEditing _elementEditing;
@@ -52,8 +56,8 @@ namespace Dsmviz.Viewer.ViewModel.SideBar
             ElementListViewModel viewModel = new ElementListViewModel(viewModelType, _relationQuery, selectedConsumer, selectedProvider);
             ElementsReportReady?.Invoke(this, viewModel);
         }
-        public event EventHandler<ElementListViewModel>? ElementsReportReady;
-        public event EventHandler<RelationListViewModel>? RelationsReportReady;
+        public event EventHandler<IElementListViewModel>? ElementsReportReady;
+        public event EventHandler<IRelationListViewModel>? RelationsReportReady;
 
         public MatrixElementSideBarViewModel(IElementEditing elementEditing, IElementQuery elementQuery, IRelationEditing relationEditing, IRelationQuery relationQuery, IMatrix matrix)
         {

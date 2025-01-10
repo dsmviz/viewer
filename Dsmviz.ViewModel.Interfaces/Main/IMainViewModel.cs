@@ -1,8 +1,8 @@
-﻿using Dsmviz.Viewer.ViewModel.Common;
-using System.ComponentModel;
+﻿using System.ComponentModel;
 using System.Windows.Input;
+using Dsmviz.ViewModel.Interfaces.Common;
 
-namespace Dsmviz.Viewer.ViewModel.Main
+namespace Dsmviz.ViewModel.Interfaces.Main
 {
     public interface IMainViewModel : INotifyPropertyChanged
     {

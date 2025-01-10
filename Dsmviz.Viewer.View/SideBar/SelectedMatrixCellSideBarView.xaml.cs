@@ -2,6 +2,7 @@
 using Dsmviz.Viewer.ViewModel.Lists.Relation;
 using Dsmviz.Viewer.ViewModel.SideBar;
 using System.Windows;
+using Dsmviz.ViewModel.Interfaces.Lists.Relation;
 
 namespace Dsmviz.Viewer.View.SideBar
 {
@@ -17,7 +18,7 @@ namespace Dsmviz.Viewer.View.SideBar
             InitializeComponent();
         }
 
-        private void OnRelationsReportReady(object sender, RelationListViewModel e)
+        private void OnRelationsReportReady(object sender, IRelationListViewModel e)
         {
             RelationListView view = new RelationListView
             {

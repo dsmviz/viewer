@@ -1,7 +1,7 @@
-﻿
-using Dsmviz.Viewer.ViewModel.Common;
+﻿using Dsmviz.Interfaces.Data.Entities;
+using Dsmviz.ViewModel.Interfaces.Common;
 
-namespace Dsmviz.Viewer.ViewModel.Matrix
+namespace Dsmviz.ViewModel.Interfaces.Matrix
 {
     public interface IMatrixViewModel
     {
@@ -19,7 +19,12 @@ namespace Dsmviz.Viewer.ViewModel.Matrix
         int? SelectedRow { get; }
         int? SelectedColumn { get; }
 
+        IElement? SelectedConsumer { get; }
+        IElement? SelectedProvider { get; }
+
         ViewPerspective SelectedViewPerspective { get; }
         bool IsSearchActive { get; }
+
+        double ZoomLevel { get; set; }
     }
 }

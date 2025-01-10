@@ -1,4 +1,4 @@
-﻿namespace Dsmviz.Viewer.ViewModel.Common
+﻿namespace Dsmviz.ViewModel.Interfaces.Common
 {
     public enum ViewPerspective
     {

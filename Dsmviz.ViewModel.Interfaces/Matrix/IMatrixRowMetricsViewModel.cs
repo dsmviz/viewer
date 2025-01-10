@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel;
 
-namespace Dsmviz.Viewer.ViewModel.Matrix
+namespace Dsmviz.ViewModel.Interfaces.Matrix
 {
     public interface IMatrixRowMetricsViewModel : INotifyPropertyChanged
     {

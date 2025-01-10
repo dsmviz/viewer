@@ -1,11 +1,17 @@
 ﻿
+using System.ComponentModel;
 using Dsmviz.Interfaces.Data.Entities;
 using Dsmviz.Viewer.ViewModel.Common;
 using Dsmviz.Viewer.ViewModel.Tooltips;
+using Dsmviz.ViewModel.Interfaces.Common;
+using Dsmviz.ViewModel.Interfaces.Matrix;
+using Dsmviz.ViewModel.Interfaces.Tooltips;
 
 namespace Dsmviz.Viewer.ViewModel.Matrix
 {
-    public class MatrixRowHeaderTreeItemViewModel : ViewModelBase
+
+
+    public class MatrixRowHeaderTreeItemViewModel : ViewModelBase, IMatrixRowHeaderTreeItemViewModel
     {
         private readonly IMatrixViewModel _viewModel;
         private readonly List<MatrixRowHeaderTreeItemViewModel> _children;
@@ -22,7 +28,7 @@ namespace Dsmviz.Viewer.ViewModel.Matrix
             ToolTipViewModel = new ElementToolTipViewModel(Element);
         }
 
-        public ElementToolTipViewModel ToolTipViewModel { get; }
+        public IElementToolTipViewModel ToolTipViewModel { get; }
         public IElement Element { get; }
 
         public int Depth { get; }
@@ -45,9 +51,9 @@ namespace Dsmviz.Viewer.ViewModel.Matrix
             set => Element.IsExpanded = value;
         }
 
-        public IReadOnlyList<MatrixRowHeaderTreeItemViewModel> Children => _children;
+        public IReadOnlyList<IMatrixRowHeaderTreeItemViewModel> Children => _children;
 
-        public MatrixRowHeaderTreeItemViewModel? Parent => _parent;
+        public IMatrixRowHeaderTreeItemViewModel? Parent => _parent;
 
         public ViewPerspective SelectedViewPerspective => _viewModel.SelectedViewPerspective;
 
@@ -59,10 +65,13 @@ namespace Dsmviz.Viewer.ViewModel.Matrix
             }
         }
 
-        public void AddChild(MatrixRowHeaderTreeItemViewModel viewModel)
+        public void AddChild(IMatrixRowHeaderTreeItemViewModel viewModel)
         {
-            _children.Add(viewModel);
-            viewModel._parent = this;
+            if (viewModel is MatrixRowHeaderTreeItemViewModel v)
+            {
+                _children.Add(v);
+                v._parent = this;
+            }
         }
 
         public void ClearChildren()
@@ -84,7 +93,7 @@ namespace Dsmviz.Viewer.ViewModel.Matrix
             }
         }
 
-        private void CountLeafElements(MatrixRowHeaderTreeItemViewModel viewModel, ref int count)
+        private void CountLeafElements(IMatrixRowHeaderTreeItemViewModel viewModel, ref int count)
         {
             if (viewModel.Children.Count == 0)
             {
@@ -92,7 +101,7 @@ namespace Dsmviz.Viewer.ViewModel.Matrix
             }
             else
             {
-                foreach (MatrixRowHeaderTreeItemViewModel child in viewModel.Children)
+                foreach (IMatrixRowHeaderTreeItemViewModel child in viewModel.Children)
                 {
                     CountLeafElements(child, ref count);
                 }

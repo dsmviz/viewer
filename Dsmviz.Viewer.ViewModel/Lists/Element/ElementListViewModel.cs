@@ -2,12 +2,14 @@
 using Dsmviz.Interfaces.Data.Entities;
 using Dsmviz.Viewer.ViewModel.Common;
 using System.Collections.ObjectModel;
+using System.ComponentModel;
 using System.Text;
 using System.Windows.Input;
+using Dsmviz.ViewModel.Interfaces.Lists.Element;
 
 namespace Dsmviz.Viewer.ViewModel.Lists.Element
 {
-    public class ElementListViewModel : ViewModelBase
+    public class ElementListViewModel : ViewModelBase, IElementListViewModel
     {
         public ElementListViewModel(ElementListViewModelType viewModelType, IRelationQuery relationQuery, IElement selectedConsumer, IElement selectedProvider)
         {
@@ -42,7 +44,7 @@ namespace Dsmviz.Viewer.ViewModel.Lists.Element
                     break;
             }
 
-            List<ElementListItemViewModel> elementViewModels = [];
+            List<IElementListItemViewModel> elementViewModels = [];
 
             foreach (IElement element in elements)
             {
@@ -58,7 +60,7 @@ namespace Dsmviz.Viewer.ViewModel.Lists.Element
                 index++;
             }
 
-            Elements = new ObservableCollection<ElementListItemViewModel>(elementViewModels);
+            Elements = new ObservableCollection<IElementListItemViewModel>(elementViewModels);
 
             CopyToClipboardCommand = RegisterCommand(CopyToClipboardExecute);
         }
@@ -66,7 +68,7 @@ namespace Dsmviz.Viewer.ViewModel.Lists.Element
         public string Title { get; }
         public string SubTitle { get; }
 
-        public ObservableCollection<ElementListItemViewModel> Elements { get; }
+        public ObservableCollection<IElementListItemViewModel> Elements { get; }
 
         public ICommand CopyToClipboardCommand { get; }
 

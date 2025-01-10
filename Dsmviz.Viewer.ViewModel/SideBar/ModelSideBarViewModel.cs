@@ -1,11 +1,13 @@
 ﻿
 
+using System.ComponentModel;
 using Dsmviz.Interfaces.Application.Persistency;
 using Dsmviz.Viewer.ViewModel.Common;
+using Dsmviz.ViewModel.Interfaces.Sidebar;
 
 namespace Dsmviz.Viewer.ViewModel.SideBar
 {
-    public class ModelSideBarViewModel(IPersistency persistency) : ViewModelBase
+    public class ModelSideBarViewModel(IPersistency persistency) : ViewModelBase, IModelSideBarViewModel
     {
         // Interfaces
 

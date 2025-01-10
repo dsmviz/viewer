@@ -2,6 +2,7 @@
 using Dsmviz.Viewer.ViewModel.Editing.Relation;
 using Dsmviz.Viewer.ViewModel.Lists.Relation;
 using System.Windows;
+using Dsmviz.ViewModel.Interfaces.Editing.Relation;
 
 namespace Dsmviz.Viewer.View.Lists
 {
@@ -27,13 +28,13 @@ namespace Dsmviz.Viewer.View.Lists
             }
         }
 
-        private void OnRelationAddStarted(object sender, RelationEditViewModel viewModel)
+        private void OnRelationAddStarted(object sender, IRelationEditViewModel viewModel)
         {
             RelationEditDialog view = new RelationEditDialog { DataContext = viewModel };
             view.ShowDialog();
         }
 
-        private void OnRelationEditStarted(object sender, RelationEditViewModel viewModel)
+        private void OnRelationEditStarted(object sender, IRelationEditViewModel viewModel)
         {
             RelationEditDialog view = new RelationEditDialog { DataContext = viewModel };
             view.ShowDialog();

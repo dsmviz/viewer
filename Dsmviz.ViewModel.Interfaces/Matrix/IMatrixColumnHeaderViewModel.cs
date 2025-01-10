@@ -1,7 +1,7 @@
-﻿using Dsmviz.Viewer.ViewModel.Tooltips;
-using System.ComponentModel;
+﻿using System.ComponentModel;
+using Dsmviz.ViewModel.Interfaces.Tooltips;
 
-namespace Dsmviz.Viewer.ViewModel.Matrix
+namespace Dsmviz.ViewModel.Interfaces.Matrix
 {
     public interface IMatrixColumnHeaderViewModel : INotifyPropertyChanged
     {
@@ -16,6 +16,6 @@ namespace Dsmviz.Viewer.ViewModel.Matrix
         int GetColumnDepth(int column);
         string GetColumnContent(int column);
 
-        ElementToolTipViewModel? ColumnHeaderToolTipViewModel { get; }
+        IElementToolTipViewModel? ColumnHeaderToolTipViewModel { get; }
     }
 }

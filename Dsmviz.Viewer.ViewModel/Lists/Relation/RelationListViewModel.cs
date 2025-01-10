@@ -4,23 +4,26 @@ using Dsmviz.Interfaces.Data.Entities;
 using Dsmviz.Viewer.ViewModel.Common;
 using Dsmviz.Viewer.ViewModel.Editing.Relation;
 using System.Collections.ObjectModel;
+using System.ComponentModel;
 using System.Text;
 using System.Windows.Input;
+using Dsmviz.ViewModel.Interfaces.Editing.Relation;
+using Dsmviz.ViewModel.Interfaces.Lists.Relation;
 
 namespace Dsmviz.Viewer.ViewModel.Lists.Relation
 {
-    public class RelationListViewModel : ViewModelBase
+    public class RelationListViewModel : ViewModelBase, IRelationListViewModel
     {
         private readonly RelationListViewModelType _viewModelType;
         private readonly IRelationQuery _relationQuery;
         private readonly IRelationEditing _relationEditing;
         private readonly IElement _selectedConsumer;
         private readonly IElement _selectedProvider;
-        private ObservableCollection<RelationListItemViewModel> _relations = [];
-        private RelationListItemViewModel? _selectedRelation;
+        private ObservableCollection<IRelationListItemViewModel> _relations = [];
+        private IRelationListItemViewModel? _selectedRelation;
 
-        public event EventHandler<RelationEditViewModel>? RelationAddStarted;
-        public event EventHandler<RelationEditViewModel>? RelationEditStarted;
+        public event EventHandler<IRelationEditViewModel>? RelationAddStarted;
+        public event EventHandler<IRelationEditViewModel>? RelationEditStarted;
 
         public RelationListViewModel(RelationListViewModelType viewModelType, IRelationQuery relationQuery, IRelationEditing relationEditing, IElement selectedConsumer, IElement selectedProvider)
         {
@@ -61,13 +64,13 @@ namespace Dsmviz.Viewer.ViewModel.Lists.Relation
         public string Title { get; }
         public string SubTitle { get; }
 
-        public ObservableCollection<RelationListItemViewModel> Relations
+        public ObservableCollection<IRelationListItemViewModel> Relations
         {
             get => _relations;
             private set { _relations = value; OnPropertyChanged(); }
         }
 
-        public RelationListItemViewModel? SelectedRelation
+        public IRelationListItemViewModel? SelectedRelation
         {
             get => _selectedRelation;
             set { _selectedRelation = value; OnPropertyChanged(); }
@@ -205,7 +208,7 @@ namespace Dsmviz.Viewer.ViewModel.Lists.Relation
                 index++;
             }
 
-            Relations = new ObservableCollection<RelationListItemViewModel>(relationViewModels);
+            Relations = new ObservableCollection<IRelationListItemViewModel>(relationViewModels);
             SelectedRelation = selectedRelationListItemViewModel;
         }
     }

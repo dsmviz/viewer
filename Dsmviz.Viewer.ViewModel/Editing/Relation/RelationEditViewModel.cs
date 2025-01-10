@@ -1,13 +1,15 @@
 ﻿
+using System.ComponentModel;
 using Dsmviz.Interfaces.Application.Editing;
 using Dsmviz.Interfaces.Application.Query;
 using Dsmviz.Interfaces.Data.Entities;
 using Dsmviz.Viewer.ViewModel.Common;
 using System.Windows.Input;
+using Dsmviz.ViewModel.Interfaces.Editing.Relation;
 
 namespace Dsmviz.Viewer.ViewModel.Editing.Relation
 {
-    public class RelationEditViewModel : ViewModelBase
+    public class RelationEditViewModel : ViewModelBase, IRelationEditViewModel
     {
         private readonly IRelationEditing _relationEditing;
         private readonly IRelation? _selectedRelation;

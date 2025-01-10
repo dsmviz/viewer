@@ -2,6 +2,9 @@
 using Dsmviz.Interfaces.Data.Entities;
 using Dsmviz.Viewer.ViewModel.Common;
 using Dsmviz.Viewer.ViewModel.Tooltips;
+using Dsmviz.ViewModel.Interfaces.Common;
+using Dsmviz.ViewModel.Interfaces.Matrix;
+using Dsmviz.ViewModel.Interfaces.Tooltips;
 
 namespace Dsmviz.Viewer.ViewModel.Matrix
 {
@@ -12,10 +15,10 @@ namespace Dsmviz.Viewer.ViewModel.Matrix
         : ViewModelBase, IMatrixCellsViewModel
     {
         private List<List<int>> _cellDepths = [];
-        private CellToolTipViewModel? _cellTooltipViewModel;
-        private IReadOnlyList<MatrixRowHeaderTreeItemViewModel> _elementViewModelLeafs = [];
+        private ICellToolTipViewModel? _cellTooltipViewModel;
+        private IReadOnlyList<IMatrixRowHeaderTreeItemViewModel> _elementViewModelLeafs = [];
 
-        public void Reload(IReadOnlyList<MatrixRowHeaderTreeItemViewModel> elementViewModelLeafs)
+        public void Reload(IReadOnlyList<IMatrixRowHeaderTreeItemViewModel> elementViewModelLeafs)
         {
             _elementViewModelLeafs = elementViewModelLeafs;
             DefineCellDepths();
@@ -67,7 +70,7 @@ namespace Dsmviz.Viewer.ViewModel.Matrix
 
         public ViewPerspective SelectedViewPerspective => viewModel.SelectedViewPerspective;
 
-        public CellToolTipViewModel? CellToolTipViewModel
+        public ICellToolTipViewModel? CellToolTipViewModel
         {
             get => _cellTooltipViewModel;
             set { _cellTooltipViewModel = value; OnPropertyChanged(); }
@@ -91,17 +94,17 @@ namespace Dsmviz.Viewer.ViewModel.Matrix
 
             // Determine cell depth
             for (int row = 0; row < matrixSize; row++)
-            {
-                MatrixRowHeaderTreeItemViewModel viewModel = _elementViewModelLeafs[row];
+            { 
+                IMatrixRowHeaderTreeItemViewModel viewModel = _elementViewModelLeafs[row];
 
                 Stack<MatrixRowHeaderTreeItemViewModel> viewModelHierarchy = new Stack<MatrixRowHeaderTreeItemViewModel>();
-                MatrixRowHeaderTreeItemViewModel child = viewModel;
-                MatrixRowHeaderTreeItemViewModel? parent = viewModel.Parent;
+                MatrixRowHeaderTreeItemViewModel? child = viewModel as MatrixRowHeaderTreeItemViewModel;
+                MatrixRowHeaderTreeItemViewModel? parent = viewModel.Parent as MatrixRowHeaderTreeItemViewModel;
                 while (parent != null && parent.Children[0] == child)
                 {
                     viewModelHierarchy.Push(parent);
                     child = parent;
-                    parent = parent.Parent;
+                    parent = parent.Parent as MatrixRowHeaderTreeItemViewModel;
                 }
 
                 foreach (MatrixRowHeaderTreeItemViewModel currentViewModel in viewModelHierarchy)

@@ -4,6 +4,8 @@ using Dsmviz.Viewer.ViewModel.Matrix;
 using System.Windows;
 using System.Windows.Input;
 using System.Windows.Media;
+using Dsmviz.ViewModel.Interfaces.Common;
+using Dsmviz.ViewModel.Interfaces.Matrix;
 
 namespace Dsmviz.Viewer.View.Matrix
 {

@@ -1,14 +1,16 @@
-﻿using Dsmviz.Interfaces.Application.Editing;
+﻿using System.ComponentModel;
+using Dsmviz.Interfaces.Application.Editing;
 using Dsmviz.Viewer.ViewModel.Common;
 using System.Text;
 using System.Windows.Input;
+using Dsmviz.ViewModel.Interfaces.Lists.Action;
 
 namespace Dsmviz.Viewer.ViewModel.Lists.Action
 {
-    public class ActionListViewModel : ViewModelBase
+    public class ActionListViewModel : ViewModelBase, IActionListViewModel
     {
         private readonly IActionManagement _actionManagement;
-        private IEnumerable<ActionListItemViewModel> _actions = [];
+        private IEnumerable<IActionListItemViewModel> _actions = [];
 
         public ActionListViewModel(IActionManagement actionManagement)
         {
@@ -30,7 +32,7 @@ namespace Dsmviz.Viewer.ViewModel.Lists.Action
 
         public string Title { get; }
 
-        public IEnumerable<ActionListItemViewModel> Actions
+        public IEnumerable<IActionListItemViewModel> Actions
         {
             get => _actions;
             set { _actions = value; OnPropertyChanged(); }

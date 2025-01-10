@@ -1,9 +1,11 @@
-﻿using Dsmviz.Interfaces.Data.Entities;
+﻿using System.ComponentModel;
+using Dsmviz.Interfaces.Data.Entities;
 using Dsmviz.Viewer.ViewModel.Common;
+using Dsmviz.ViewModel.Interfaces.Lists.Element;
 
 namespace Dsmviz.Viewer.ViewModel.Lists.Element
 {
-    public class ElementListItemViewModel(IElement element) : ViewModelBase, IComparable
+    public class ElementListItemViewModel(IElement element) : ViewModelBase, IComparable, IElementListItemViewModel
     {
         public int Index { get; set; }
         public string ElementPath { get; } = element.Parent?.Fullname ?? string.Empty;

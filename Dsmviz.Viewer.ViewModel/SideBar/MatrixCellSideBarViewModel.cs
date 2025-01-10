@@ -1,5 +1,6 @@
 ﻿
 
+using System.ComponentModel;
 using Dsmviz.Interfaces.Application.Editing;
 using Dsmviz.Interfaces.Application.Matrix;
 using Dsmviz.Interfaces.Application.Query;
@@ -7,10 +8,12 @@ using Dsmviz.Interfaces.Data.Entities;
 using Dsmviz.Viewer.ViewModel.Common;
 using Dsmviz.Viewer.ViewModel.Lists.Relation;
 using System.Windows.Input;
+using Dsmviz.ViewModel.Interfaces.Lists.Relation;
+using Dsmviz.ViewModel.Interfaces.Sidebar;
 
 namespace Dsmviz.Viewer.ViewModel.SideBar
 {
-    public class MatrixCellSideBarViewModel : ViewModelBase
+    public class MatrixCellSideBarViewModel : ViewModelBase, IMatrixCellSideBarViewModel
     {
         // Interfaces
         private readonly IRelationEditing _relationEditing;
@@ -33,7 +36,7 @@ namespace Dsmviz.Viewer.ViewModel.SideBar
             RelationsReportReady?.Invoke(this, viewModel);
         }
 
-        public event EventHandler<RelationListViewModel>? RelationsReportReady;
+        public event EventHandler<IRelationListViewModel>? RelationsReportReady;
 
         public MatrixCellSideBarViewModel(IRelationEditing relationEditing, IRelationQuery relationQuery, IMatrix matrix)
         {

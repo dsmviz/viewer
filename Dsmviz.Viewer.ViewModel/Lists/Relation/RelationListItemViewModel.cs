@@ -1,9 +1,11 @@
-﻿using Dsmviz.Interfaces.Data.Entities;
+﻿using System.ComponentModel;
+using Dsmviz.Interfaces.Data.Entities;
 using Dsmviz.Viewer.ViewModel.Common;
+using Dsmviz.ViewModel.Interfaces.Lists.Relation;
 
 namespace Dsmviz.Viewer.ViewModel.Lists.Relation
 {
-    public class RelationListItemViewModel(IRelation relation) : ViewModelBase, IComparable
+    public class RelationListItemViewModel(IRelation relation) : ViewModelBase, IComparable, IRelationListItemViewModel
     {
         public IRelation Relation { get; set; } = relation;
 

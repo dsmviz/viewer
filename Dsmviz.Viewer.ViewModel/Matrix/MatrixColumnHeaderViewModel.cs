@@ -1,15 +1,17 @@
 ﻿using Dsmviz.Interfaces.Data.Entities;
 using Dsmviz.Viewer.ViewModel.Common;
 using Dsmviz.Viewer.ViewModel.Tooltips;
+using Dsmviz.ViewModel.Interfaces.Matrix;
+using Dsmviz.ViewModel.Interfaces.Tooltips;
 
 namespace Dsmviz.Viewer.ViewModel.Matrix
 {
     public class MatrixColumnHeaderViewModel(IMatrixViewModel viewModel) : ViewModelBase, IMatrixColumnHeaderViewModel
     {
-        private IReadOnlyList<MatrixRowHeaderTreeItemViewModel> _elementViewModelLeafs = [];
-        private ElementToolTipViewModel? _columnHeaderTooltipViewModel;
+        private IReadOnlyList<IMatrixRowHeaderTreeItemViewModel> _elementViewModelLeafs = [];
+        private IElementToolTipViewModel? _columnHeaderTooltipViewModel;
 
-        public void Reload(IReadOnlyList<MatrixRowHeaderTreeItemViewModel> elementViewModelLeafs)
+        public void Reload(IReadOnlyList<IMatrixRowHeaderTreeItemViewModel> elementViewModelLeafs)
         {
             _elementViewModelLeafs = elementViewModelLeafs;
             OnPropertyChanged(nameof(MatrixColumnHeaderViewModel));
@@ -47,7 +49,7 @@ namespace Dsmviz.Viewer.ViewModel.Matrix
             return _elementViewModelLeafs[column].Element.Order.ToString();
         }
 
-        public ElementToolTipViewModel? ColumnHeaderToolTipViewModel
+        public IElementToolTipViewModel? ColumnHeaderToolTipViewModel
         {
             get => _columnHeaderTooltipViewModel;
             set { _columnHeaderTooltipViewModel = value; OnPropertyChanged(); }

@@ -8,6 +8,9 @@ using Dsmviz.Viewer.ViewModel.Common;
 using Dsmviz.Viewer.ViewModel.Main;
 using Dsmviz.Viewer.ViewModel.SideBar;
 using System.Windows.Input;
+using Dsmviz.ViewModel.Interfaces.Common;
+using Dsmviz.ViewModel.Interfaces.Main;
+using Dsmviz.ViewModel.Interfaces.Matrix;
 
 namespace Dsmviz.Viewer.ViewModel.Matrix
 {
@@ -15,7 +18,7 @@ namespace Dsmviz.Viewer.ViewModel.Matrix
     {
         private double _zoomLevel;
         private readonly IMainViewModel _mainViewModel;
-        private IReadOnlyList<MatrixRowHeaderTreeItemViewModel> _elementViewModelLeafs = [];
+        private IReadOnlyList<IMatrixRowHeaderTreeItemViewModel> _elementViewModelLeafs = [];
 
         private int? _hoveredRow;
         private int? _hoveredColumn;

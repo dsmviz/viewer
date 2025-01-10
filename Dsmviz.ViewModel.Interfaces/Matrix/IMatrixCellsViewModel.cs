@@ -1,9 +1,9 @@
-﻿using Dsmviz.Interfaces.Application.Matrix;
-using Dsmviz.Viewer.ViewModel.Common;
-using Dsmviz.Viewer.ViewModel.Tooltips;
-using System.ComponentModel;
+﻿using System.ComponentModel;
+using Dsmviz.Interfaces.Application.Matrix;
+using Dsmviz.ViewModel.Interfaces.Common;
+using Dsmviz.ViewModel.Interfaces.Tooltips;
 
-namespace Dsmviz.Viewer.ViewModel.Matrix
+namespace Dsmviz.ViewModel.Interfaces.Matrix
 {
     public interface IMatrixCellsViewModel : INotifyPropertyChanged
     {
@@ -17,7 +17,7 @@ namespace Dsmviz.Viewer.ViewModel.Matrix
 
         int MatrixSize { get; }
 
-        CellToolTipViewModel? CellToolTipViewModel { get; }
+        ICellToolTipViewModel? CellToolTipViewModel { get; }
 
         int GetCellDepth(int row, int column);
         int GetCellWeight(int row, int column);

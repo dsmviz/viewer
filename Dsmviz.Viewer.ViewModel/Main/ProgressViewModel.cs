@@ -1,5 +1,7 @@
-﻿using Dsmviz.Interfaces.Util;
+﻿using System.ComponentModel;
+using Dsmviz.Interfaces.Util;
 using Dsmviz.Viewer.ViewModel.Common;
+using Dsmviz.ViewModel.Interfaces.Main;
 
 namespace Dsmviz.Viewer.ViewModel.Main
 {
@@ -8,7 +10,7 @@ namespace Dsmviz.Viewer.ViewModel.Main
     /// This class provides properties and methods to update and notify about   
     /// the current progress state, title, error messages, and progress percentage.  
     /// </summary>  
-    public class ProgressViewModel : ViewModelBase
+    public class ProgressViewModel : ViewModelBase, IProgressViewModel
     {
         /// <summary>  
         /// Event triggered when the progress state changes.  

@@ -11,6 +11,9 @@ using Dsmviz.Viewer.ViewModel.Settings;
 using System.Windows;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using Dsmviz.ViewModel.Interfaces.Editing.Element;
+using Dsmviz.ViewModel.Interfaces.Lists.Action;
+using Dsmviz.ViewModel.Interfaces.Settings;
 using SettingsView = Dsmviz.Viewer.View.Settings.SettingsView;
 
 namespace Dsmviz.Viewer.View.Windows
@@ -58,19 +61,19 @@ namespace Dsmviz.Viewer.View.Windows
             OpenModelFile();
         }
 
-        private void OnSettingsVisible(object sender, SettingsViewModel viewModel)
+        private void OnSettingsVisible(object sender, ISettingsViewModel viewModel)
         {
             SettingsView view = new SettingsView { DataContext = viewModel };
             view.ShowDialog();
         }
 
-        private void OnActionsVisible(object sender, ActionListViewModel viewModel)
+        private void OnActionsVisible(object sender, IActionListViewModel viewModel)
         {
             ActionListView view = new ActionListView { DataContext = viewModel };
             view.Show();
         }
 
-        private void OnElementEditStarted(object sender, ElementEditViewModel viewModel)
+        private void OnElementEditStarted(object sender, IElementEditViewModel viewModel)
         {
             ElementEditDialog view = new ElementEditDialog { DataContext = viewModel };
             view.ShowDialog();

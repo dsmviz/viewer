@@ -3,6 +3,9 @@ using Dsmviz.Viewer.ViewModel.Lists.Element;
 using Dsmviz.Viewer.ViewModel.Lists.Relation;
 using Dsmviz.Viewer.ViewModel.SideBar;
 using System.Windows;
+using Dsmviz.ViewModel.Interfaces.Lists.Element;
+using Dsmviz.ViewModel.Interfaces.Lists.Relation;
+using Dsmviz.ViewModel.Interfaces.Sidebar;
 
 namespace Dsmviz.Viewer.View.SideBar
 {
@@ -11,14 +14,14 @@ namespace Dsmviz.Viewer.View.SideBar
     /// </summary>
     public partial class SelectedMatrixElementSideBarView
     {
-        private MatrixElementSideBarViewModel? _viewModel;
+        private IMatrixElementSideBarViewModel? _viewModel;
 
         public SelectedMatrixElementSideBarView()
         {
             InitializeComponent();
         }
 
-        private void OnElementsReportReady(object sender, ElementListViewModel e)
+        private void OnElementsReportReady(object sender, IElementListViewModel e)
         {
             ElementListView view = new ElementListView
             {
@@ -27,7 +30,7 @@ namespace Dsmviz.Viewer.View.SideBar
             view.Show();
         }
 
-        private void OnRelationsReportReady(object sender, RelationListViewModel e)
+        private void OnRelationsReportReady(object sender, IRelationListViewModel e)
         {
             RelationListView view = new RelationListView
             {
@@ -38,7 +41,7 @@ namespace Dsmviz.Viewer.View.SideBar
 
         private void OnLoaded(object sender, RoutedEventArgs e)
         {
-            _viewModel = DataContext as MatrixElementSideBarViewModel;
+            _viewModel = DataContext as IMatrixElementSideBarViewModel;
             if (_viewModel != null)
             {
                 _viewModel.ElementsReportReady += OnElementsReportReady;

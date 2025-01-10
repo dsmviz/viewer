@@ -4,10 +4,11 @@ using Dsmviz.Interfaces.Data.Entities;
 using Dsmviz.Viewer.ViewModel.Common;
 using System.Collections.ObjectModel;
 using System.Windows.Input;
+using Dsmviz.ViewModel.Interfaces.Search;
 
 namespace Dsmviz.Viewer.ViewModel.Search
 {
-    public class ElementSearchViewModel : ViewModelBase
+    public class ElementSearchViewModel : ViewModelBase, IElementSearchViewModel
     {
         private readonly IElementQuery _elementQuery;
         private readonly IElement? _searchPathElement;

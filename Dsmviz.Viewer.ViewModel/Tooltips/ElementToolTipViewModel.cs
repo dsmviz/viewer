@@ -1,9 +1,11 @@
-﻿using Dsmviz.Interfaces.Data.Entities;
+﻿using System.ComponentModel;
+using Dsmviz.Interfaces.Data.Entities;
 using Dsmviz.Viewer.ViewModel.Common;
+using Dsmviz.ViewModel.Interfaces.Tooltips;
 
 namespace Dsmviz.Viewer.ViewModel.Tooltips
 {
-    public class ElementToolTipViewModel(IElement element) : ViewModelBase
+    public class ElementToolTipViewModel(IElement element) : ViewModelBase, IElementToolTipViewModel
     {
         public string Title => "Element";
         public int Id => element.Id;

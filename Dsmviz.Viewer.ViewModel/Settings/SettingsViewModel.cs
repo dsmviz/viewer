@@ -1,11 +1,15 @@
 ﻿
+using System.ComponentModel;
 using Dsmviz.Viewer.Utils;
 using Dsmviz.Viewer.ViewModel.Common;
 using System.Windows.Input;
+using Dsmviz.ViewModel.Interfaces.Settings;
 
 namespace Dsmviz.Viewer.ViewModel.Settings
 {
-    public class SettingsViewModel : ViewModelBase
+
+
+    public class SettingsViewModel : ViewModelBase, ISettingsViewModel
     {
         private const string DarkThemeName = "Dark";
         private const string LightThemeName = "Light";

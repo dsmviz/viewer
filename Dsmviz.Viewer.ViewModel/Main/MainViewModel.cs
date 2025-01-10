@@ -12,16 +12,22 @@ using Dsmviz.Viewer.ViewModel.Matrix;
 using Dsmviz.Viewer.ViewModel.Search;
 using Dsmviz.Viewer.ViewModel.Settings;
 using System.Windows.Input;
+using Dsmviz.ViewModel.Interfaces.Common;
+using Dsmviz.ViewModel.Interfaces.Editing.Element;
+using Dsmviz.ViewModel.Interfaces.Lists.Action;
+using Dsmviz.ViewModel.Interfaces.Main;
+using Dsmviz.ViewModel.Interfaces.Matrix;
+using Dsmviz.ViewModel.Interfaces.Settings;
 
 namespace Dsmviz.Viewer.ViewModel.Main
 {
     public class MainViewModel : ViewModelBase, IMainViewModel
     {
-        public event EventHandler<ElementEditViewModel>? ElementEditStarted;
+        public event EventHandler<IElementEditViewModel>? ElementEditStarted;
 
-        public event EventHandler<ActionListViewModel>? ActionsVisible;
+        public event EventHandler<IActionListViewModel>? ActionsVisible;
 
-        public event EventHandler<SettingsViewModel>? SettingsVisible;
+        public event EventHandler<ISettingsViewModel>? SettingsVisible;
 
         public event EventHandler? ScreenshotRequested;
 
@@ -143,7 +149,7 @@ namespace Dsmviz.Viewer.ViewModel.Main
 
         public IElement? SelectedProvider => MatrixViewModel.SelectedProvider;
 
-        public MatrixViewModel MatrixViewModel => _matrixViewModel;
+        public IMatrixViewModel MatrixViewModel => _matrixViewModel;
 
         public ElementSearchViewModel ElementSearchViewModel => _elementSearchViewModel;
 

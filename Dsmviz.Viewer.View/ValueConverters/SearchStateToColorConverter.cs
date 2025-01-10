@@ -2,6 +2,7 @@
 using System.Globalization;
 using System.Windows.Data;
 using System.Windows.Media;
+using Dsmviz.ViewModel.Interfaces.Search;
 
 namespace Dsmviz.Viewer.View.ValueConverters
 {

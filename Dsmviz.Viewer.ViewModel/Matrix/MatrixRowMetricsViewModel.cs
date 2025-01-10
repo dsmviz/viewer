@@ -1,16 +1,17 @@
 ﻿using Dsmviz.Interfaces.Application.Metrics;
 using Dsmviz.Viewer.ViewModel.Common;
+using Dsmviz.ViewModel.Interfaces.Matrix;
 
 namespace Dsmviz.Viewer.ViewModel.Matrix
 {
     public class MatrixRowMetricsViewModel(IMatrixViewModel matrixViewModel, IMetrics applicationMetrics)
         : ViewModelBase, IMatrixRowMetricsViewModel
     {
-        private IReadOnlyList<MatrixRowHeaderTreeItemViewModel> _elementViewModelLeafs = [];
+        private IReadOnlyList<IMatrixRowHeaderTreeItemViewModel> _elementViewModelLeafs = [];
 
         private MetricType _selectedMetricType = MetricType.NumberOfElements;
 
-        public void Reload(MetricType selectedMetricType, IReadOnlyList<MatrixRowHeaderTreeItemViewModel> elementViewModelLeafs)
+        public void Reload(MetricType selectedMetricType, IReadOnlyList<IMatrixRowHeaderTreeItemViewModel> elementViewModelLeafs)
         {
             _elementViewModelLeafs = elementViewModelLeafs;
             _selectedMetricType = selectedMetricType;

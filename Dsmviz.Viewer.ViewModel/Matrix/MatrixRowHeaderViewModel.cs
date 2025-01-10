@@ -2,18 +2,19 @@
 using Dsmviz.Interfaces.Data.Entities;
 using Dsmviz.Viewer.ViewModel.Common;
 using System.Collections.ObjectModel;
+using Dsmviz.ViewModel.Interfaces.Matrix;
 
 namespace Dsmviz.Viewer.ViewModel.Matrix
 {
     public class MatrixRowHeaderViewModel(IMatrixViewModel viewModel, IElementQuery elementQuery)
         : ViewModelBase, IMatrixRowHeaderViewModel
     {
-        private MatrixRowHeaderTreeItemViewModel? _selectedTreeItem;
-        private MatrixRowHeaderTreeItemViewModel? _hoveredTreeItem;
-        private ObservableCollection<MatrixRowHeaderTreeItemViewModel> _elementViewModelTree = [];
-        private List<MatrixRowHeaderTreeItemViewModel> _elementViewModelLeafs = [];
+        private IMatrixRowHeaderTreeItemViewModel? _selectedTreeItem;
+        private IMatrixRowHeaderTreeItemViewModel? _hoveredTreeItem;
+        private ObservableCollection<IMatrixRowHeaderTreeItemViewModel> _elementViewModelTree = [];
+        private List<IMatrixRowHeaderTreeItemViewModel> _elementViewModelLeafs = [];
 
-        public IReadOnlyList<MatrixRowHeaderTreeItemViewModel> Reload()
+        public IReadOnlyList<IMatrixRowHeaderTreeItemViewModel> Reload()
         {
             ElementViewModelTree = CreateElementViewModelTree();
             _elementViewModelLeafs = FindLeafElementViewModels();
@@ -33,13 +34,13 @@ namespace Dsmviz.Viewer.ViewModel.Matrix
             viewModel.ContentChanged();
         }
 
-        public ObservableCollection<MatrixRowHeaderTreeItemViewModel> ElementViewModelTree
+        public ObservableCollection<IMatrixRowHeaderTreeItemViewModel> ElementViewModelTree
         {
             get => _elementViewModelTree;
             private set { _elementViewModelTree = value; OnPropertyChanged(); }
         }
 
-        public void HoverTreeItem(MatrixRowHeaderTreeItemViewModel hoveredTreeItem)
+        public void HoverTreeItem(IMatrixRowHeaderTreeItemViewModel hoveredTreeItem)
         {
             viewModel.HoverCell(null, null);
             for (int row = 0; row < _elementViewModelLeafs.Count; row++)
@@ -52,7 +53,7 @@ namespace Dsmviz.Viewer.ViewModel.Matrix
             _hoveredTreeItem = hoveredTreeItem;
         }
 
-        public void SelectTreeItem(MatrixRowHeaderTreeItemViewModel selectedTreeItem)
+        public void SelectTreeItem(IMatrixRowHeaderTreeItemViewModel selectedTreeItem)
         {
             viewModel.SelectCell(null, null);
             for (int row = 0; row < _elementViewModelLeafs.Count; row++)
@@ -65,11 +66,11 @@ namespace Dsmviz.Viewer.ViewModel.Matrix
             _selectedTreeItem = selectedTreeItem;
         }
 
-        public MatrixRowHeaderTreeItemViewModel? SelectedTreeItem
+        public IMatrixRowHeaderTreeItemViewModel? SelectedTreeItem
         {
             get
             {
-                MatrixRowHeaderTreeItemViewModel? selectedTreeItem;
+                IMatrixRowHeaderTreeItemViewModel? selectedTreeItem;
                 if (viewModel.SelectedRow.HasValue && (viewModel.SelectedRow.Value < _elementViewModelLeafs.Count))
                 {
                     selectedTreeItem = _elementViewModelLeafs[viewModel.SelectedRow.Value];
@@ -82,11 +83,11 @@ namespace Dsmviz.Viewer.ViewModel.Matrix
             }
         }
 
-        public MatrixRowHeaderTreeItemViewModel? HoveredTreeItem
+        public IMatrixRowHeaderTreeItemViewModel? HoveredTreeItem
         {
             get
             {
-                MatrixRowHeaderTreeItemViewModel? hoveredTreeItem;
+                IMatrixRowHeaderTreeItemViewModel? hoveredTreeItem;
                 if (viewModel.HoveredRow.HasValue && (viewModel.HoveredRow.Value < _elementViewModelLeafs.Count))
                 {
                     hoveredTreeItem = _elementViewModelLeafs[viewModel.HoveredRow.Value];
@@ -99,10 +100,10 @@ namespace Dsmviz.Viewer.ViewModel.Matrix
             }
         }
 
-        private ObservableCollection<MatrixRowHeaderTreeItemViewModel> CreateElementViewModelTree()
+        private ObservableCollection<IMatrixRowHeaderTreeItemViewModel> CreateElementViewModelTree()
         {
             int depth = 0;
-            ObservableCollection<MatrixRowHeaderTreeItemViewModel> tree = [];
+            ObservableCollection<IMatrixRowHeaderTreeItemViewModel> tree = [];
 
             if (elementQuery.RootElement.HasChildren)
             {
@@ -114,7 +115,7 @@ namespace Dsmviz.Viewer.ViewModel.Matrix
             return tree;
         }
 
-        private void AddElementViewModelChildren(MatrixRowHeaderTreeItemViewModel parentViewModel)
+        private void AddElementViewModelChildren(IMatrixRowHeaderTreeItemViewModel parentViewModel)
         {
             if (parentViewModel.Element.IsExpanded)
             {
@@ -131,11 +132,11 @@ namespace Dsmviz.Viewer.ViewModel.Matrix
             }
         }
 
-        private List<MatrixRowHeaderTreeItemViewModel> FindLeafElementViewModels()
+        private List<IMatrixRowHeaderTreeItemViewModel> FindLeafElementViewModels()
         {
-            List<MatrixRowHeaderTreeItemViewModel> leafViewModels = [];
+            List<IMatrixRowHeaderTreeItemViewModel> leafViewModels = [];
 
-            foreach (MatrixRowHeaderTreeItemViewModel childViewModel in ElementViewModelTree)
+            foreach (IMatrixRowHeaderTreeItemViewModel childViewModel in ElementViewModelTree)
             {
                 FindLeafElementViewModels(leafViewModels, childViewModel);
             }
@@ -143,14 +144,14 @@ namespace Dsmviz.Viewer.ViewModel.Matrix
             return leafViewModels;
         }
 
-        private void FindLeafElementViewModels(List<MatrixRowHeaderTreeItemViewModel> leafViewModels, MatrixRowHeaderTreeItemViewModel parentViewModel)
+        private void FindLeafElementViewModels(List<IMatrixRowHeaderTreeItemViewModel> leafViewModels, IMatrixRowHeaderTreeItemViewModel parentViewModel)
         {
             if (!parentViewModel.IsExpanded)
             {
                 leafViewModels.Add(parentViewModel);
             }
 
-            foreach (MatrixRowHeaderTreeItemViewModel childViewModel in parentViewModel.Children)
+            foreach (IMatrixRowHeaderTreeItemViewModel childViewModel in parentViewModel.Children)
             {
                 FindLeafElementViewModels(leafViewModels, childViewModel);
             }
