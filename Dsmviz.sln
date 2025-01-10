@@ -105,7 +105,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ViewModel", "ViewModel", "{
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ViewModel", "ViewModel", "{DFA25F93-3564-4D7A-9760-FD5857D7C6A7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dsmviz.Interfaces.ViewModel", "Dsmviz.ViewModel.Interfaces\Dsmviz.Interfaces.ViewModel.csproj", "{9B2AF3D6-9303-4436-9ACC-EE0831857E4B}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dsmviz.Interfaces.ViewModel", "Dsmviz.Interfaces.ViewModel\Dsmviz.Interfaces.ViewModel.csproj", "{9B2AF3D6-9303-4436-9ACC-EE0831857E4B}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Plugins", "Plugins", "{23989409-3BB3-4684-ABF8-5095B298749D}"
 EndProject

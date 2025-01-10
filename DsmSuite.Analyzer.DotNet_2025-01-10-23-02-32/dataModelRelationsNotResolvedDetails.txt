@@ -1,0 +1,9 @@
+Relations not resolved
+---------------------------------------------
+Castle.Components.DictionaryAdapter.Xml.XPathCompiler/Tokenizer/State 1 occurrences
+   From Castle.Components.DictionaryAdapter.Xml.XPathCompiler/Tokenizer
+CommunityToolkit.Mvvm.Input.RelayCommand`1 1 occurrences
+   From Dsmviz.Viewer.ViewModel.Common.ViewModelBase
+SimpleJSON.JSONNode/Enumerator/Type 1 occurrences
+   From SimpleJSON.JSONNode/Enumerator
+3 items found in 3 occurrences

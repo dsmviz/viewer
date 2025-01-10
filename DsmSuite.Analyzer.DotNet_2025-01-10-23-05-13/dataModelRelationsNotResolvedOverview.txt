@@ -1,0 +1,6 @@
+Relations not resolved
+--------------------------------------------
+Castle.Components.DictionaryAdapter.Xml.XPathCompiler/Tokenizer/State 1 occurrences
+CommunityToolkit.Mvvm.Input.RelayCommand`1 1 occurrences
+SimpleJSON.JSONNode/Enumerator/Type 1 occurrences
+3 items found in 3 occurrences
