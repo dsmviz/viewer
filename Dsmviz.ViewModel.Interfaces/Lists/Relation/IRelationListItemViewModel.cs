@@ -1,7 +1,7 @@
 ﻿using System.ComponentModel;
 using Dsmviz.Interfaces.Data.Entities;
 
-namespace Dsmviz.ViewModel.Interfaces.Lists.Relation
+namespace Dsmviz.Interfaces.ViewModel.Lists.Relation
 {
     public interface IRelationListItemViewModel
     {

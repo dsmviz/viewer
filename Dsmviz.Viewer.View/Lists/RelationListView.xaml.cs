@@ -2,7 +2,7 @@
 using Dsmviz.Viewer.ViewModel.Editing.Relation;
 using Dsmviz.Viewer.ViewModel.Lists.Relation;
 using System.Windows;
-using Dsmviz.ViewModel.Interfaces.Editing.Relation;
+using Dsmviz.Interfaces.ViewModel.Editing.Relation;
 
 namespace Dsmviz.Viewer.View.Lists
 {

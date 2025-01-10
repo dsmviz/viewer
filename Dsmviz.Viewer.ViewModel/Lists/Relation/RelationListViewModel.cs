@@ -7,8 +7,8 @@ using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Text;
 using System.Windows.Input;
-using Dsmviz.ViewModel.Interfaces.Editing.Relation;
-using Dsmviz.ViewModel.Interfaces.Lists.Relation;
+using Dsmviz.Interfaces.ViewModel.Editing.Relation;
+using Dsmviz.Interfaces.ViewModel.Lists.Relation;
 
 namespace Dsmviz.Viewer.ViewModel.Lists.Relation
 {

@@ -12,12 +12,12 @@ using Dsmviz.Viewer.ViewModel.Matrix;
 using Dsmviz.Viewer.ViewModel.Search;
 using Dsmviz.Viewer.ViewModel.Settings;
 using System.Windows.Input;
-using Dsmviz.ViewModel.Interfaces.Common;
-using Dsmviz.ViewModel.Interfaces.Editing.Element;
-using Dsmviz.ViewModel.Interfaces.Lists.Action;
-using Dsmviz.ViewModel.Interfaces.Main;
-using Dsmviz.ViewModel.Interfaces.Matrix;
-using Dsmviz.ViewModel.Interfaces.Settings;
+using Dsmviz.Interfaces.ViewModel.Common;
+using Dsmviz.Interfaces.ViewModel.Editing.Element;
+using Dsmviz.Interfaces.ViewModel.Lists.Action;
+using Dsmviz.Interfaces.ViewModel.Main;
+using Dsmviz.Interfaces.ViewModel.Matrix;
+using Dsmviz.Interfaces.ViewModel.Settings;
 
 namespace Dsmviz.Viewer.ViewModel.Main
 {

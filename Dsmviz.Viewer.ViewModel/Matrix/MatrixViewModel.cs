@@ -8,9 +8,9 @@ using Dsmviz.Viewer.ViewModel.Common;
 using Dsmviz.Viewer.ViewModel.Main;
 using Dsmviz.Viewer.ViewModel.SideBar;
 using System.Windows.Input;
-using Dsmviz.ViewModel.Interfaces.Common;
-using Dsmviz.ViewModel.Interfaces.Main;
-using Dsmviz.ViewModel.Interfaces.Matrix;
+using Dsmviz.Interfaces.ViewModel.Common;
+using Dsmviz.Interfaces.ViewModel.Main;
+using Dsmviz.Interfaces.ViewModel.Matrix;
 
 namespace Dsmviz.Viewer.ViewModel.Matrix
 {

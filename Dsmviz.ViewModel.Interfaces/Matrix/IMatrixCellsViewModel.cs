@@ -1,9 +1,9 @@
 ﻿using System.ComponentModel;
 using Dsmviz.Interfaces.Application.Matrix;
-using Dsmviz.ViewModel.Interfaces.Common;
-using Dsmviz.ViewModel.Interfaces.Tooltips;
+using Dsmviz.Interfaces.ViewModel.Common;
+using Dsmviz.Interfaces.ViewModel.Tooltips;
 
-namespace Dsmviz.ViewModel.Interfaces.Matrix
+namespace Dsmviz.Interfaces.ViewModel.Matrix
 {
     public interface IMatrixCellsViewModel : INotifyPropertyChanged
     {

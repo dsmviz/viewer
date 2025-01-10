@@ -4,7 +4,7 @@ using Dsmviz.Interfaces.Data.Entities;
 using Dsmviz.Viewer.ViewModel.Common;
 using System.Collections.ObjectModel;
 using System.Windows.Input;
-using Dsmviz.ViewModel.Interfaces.Search;
+using Dsmviz.Interfaces.ViewModel.Search;
 
 namespace Dsmviz.Viewer.ViewModel.Search
 {

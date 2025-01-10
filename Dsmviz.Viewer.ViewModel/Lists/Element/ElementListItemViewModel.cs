@@ -1,7 +1,7 @@
 ﻿using System.ComponentModel;
 using Dsmviz.Interfaces.Data.Entities;
+using Dsmviz.Interfaces.ViewModel.Lists.Element;
 using Dsmviz.Viewer.ViewModel.Common;
-using Dsmviz.ViewModel.Interfaces.Lists.Element;
 
 namespace Dsmviz.Viewer.ViewModel.Lists.Element
 {

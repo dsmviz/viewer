@@ -2,7 +2,7 @@
 using System.Windows.Input;
 using Dsmviz.Interfaces.Data.Entities;
 
-namespace Dsmviz.ViewModel.Interfaces.Editing.Relation
+namespace Dsmviz.Interfaces.ViewModel.Editing.Relation
 {
     public interface IRelationEditViewModel
     {

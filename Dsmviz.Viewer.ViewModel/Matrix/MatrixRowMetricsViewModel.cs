@@ -1,6 +1,6 @@
 ﻿using Dsmviz.Interfaces.Application.Metrics;
+using Dsmviz.Interfaces.ViewModel.Matrix;
 using Dsmviz.Viewer.ViewModel.Common;
-using Dsmviz.ViewModel.Interfaces.Matrix;
 
 namespace Dsmviz.Viewer.ViewModel.Matrix
 {

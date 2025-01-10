@@ -1,8 +1,8 @@
 ﻿using Dsmviz.Interfaces.Data.Entities;
+using Dsmviz.Interfaces.ViewModel.Matrix;
+using Dsmviz.Interfaces.ViewModel.Tooltips;
 using Dsmviz.Viewer.ViewModel.Common;
 using Dsmviz.Viewer.ViewModel.Tooltips;
-using Dsmviz.ViewModel.Interfaces.Matrix;
-using Dsmviz.ViewModel.Interfaces.Tooltips;
 
 namespace Dsmviz.Viewer.ViewModel.Matrix
 {

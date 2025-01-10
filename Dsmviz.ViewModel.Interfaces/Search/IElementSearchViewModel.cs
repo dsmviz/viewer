@@ -3,7 +3,7 @@ using System.ComponentModel;
 using System.Windows.Input;
 using Dsmviz.Interfaces.Data.Entities;
 
-namespace Dsmviz.ViewModel.Interfaces.Search
+namespace Dsmviz.Interfaces.ViewModel.Search
 {
     public interface IElementSearchViewModel
     {

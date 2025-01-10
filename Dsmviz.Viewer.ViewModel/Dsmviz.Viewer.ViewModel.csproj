@@ -14,7 +14,7 @@
   <ItemGroup>
     <ProjectReference Include="..\Dsmviz.Viewer.Utils\Dsmviz.Viewer.Utils.csproj" />
     <ProjectReference Include="..\Dsmviz.Interfaces.Application\Dsmviz.Interfaces.Application.csproj" />
-    <ProjectReference Include="..\Dsmviz.ViewModel.Interfaces\Dsmviz.ViewModel.Interfaces.csproj" />
+    <ProjectReference Include="..\Dsmviz.ViewModel.Interfaces\Dsmviz.Interfaces.ViewModel.csproj" />
   </ItemGroup>
 
 </Project>

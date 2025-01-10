@@ -1,4 +1,4 @@
-﻿namespace Dsmviz.ViewModel.Interfaces.Search
+﻿namespace Dsmviz.Interfaces.ViewModel.Search
 {
     public enum SearchState
     {

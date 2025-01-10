@@ -1,7 +1,7 @@
 ﻿using System.ComponentModel;
-using Dsmviz.ViewModel.Interfaces.Tooltips;
+using Dsmviz.Interfaces.ViewModel.Tooltips;
 
-namespace Dsmviz.ViewModel.Interfaces.Matrix
+namespace Dsmviz.Interfaces.ViewModel.Matrix
 {
     public interface IMatrixColumnHeaderViewModel : INotifyPropertyChanged
     {

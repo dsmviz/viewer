@@ -1,7 +1,7 @@
 ﻿using Dsmviz.Interfaces.Data.Entities;
-using Dsmviz.ViewModel.Interfaces.Common;
+using Dsmviz.Interfaces.ViewModel.Common;
 
-namespace Dsmviz.ViewModel.Interfaces.Matrix
+namespace Dsmviz.Interfaces.ViewModel.Matrix
 {
     public interface IMatrixViewModel
     {

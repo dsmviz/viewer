@@ -1,7 +1,7 @@
 ﻿using Dsmviz.Viewer.ViewModel.Matrix;
 using System.Windows;
 using System.Windows.Controls;
-using Dsmviz.ViewModel.Interfaces.Matrix;
+using Dsmviz.Interfaces.ViewModel.Matrix;
 
 namespace Dsmviz.Viewer.View.Matrix
 {

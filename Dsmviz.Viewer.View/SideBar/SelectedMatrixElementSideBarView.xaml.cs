@@ -3,9 +3,9 @@ using Dsmviz.Viewer.ViewModel.Lists.Element;
 using Dsmviz.Viewer.ViewModel.Lists.Relation;
 using Dsmviz.Viewer.ViewModel.SideBar;
 using System.Windows;
-using Dsmviz.ViewModel.Interfaces.Lists.Element;
-using Dsmviz.ViewModel.Interfaces.Lists.Relation;
-using Dsmviz.ViewModel.Interfaces.Sidebar;
+using Dsmviz.Interfaces.ViewModel.Lists.Element;
+using Dsmviz.Interfaces.ViewModel.Lists.Relation;
+using Dsmviz.Interfaces.ViewModel.Sidebar;
 
 namespace Dsmviz.Viewer.View.SideBar
 {

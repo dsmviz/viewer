@@ -5,7 +5,7 @@ using Dsmviz.Interfaces.Application.Query;
 using Dsmviz.Interfaces.Data.Entities;
 using Dsmviz.Viewer.ViewModel.Common;
 using System.Windows.Input;
-using Dsmviz.ViewModel.Interfaces.Editing.Relation;
+using Dsmviz.Interfaces.ViewModel.Editing.Relation;
 
 namespace Dsmviz.Viewer.ViewModel.Editing.Relation
 {

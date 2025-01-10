@@ -2,7 +2,7 @@
 using Dsmviz.Interfaces.Data.Entities;
 using Dsmviz.Viewer.ViewModel.Common;
 using System.Collections.ObjectModel;
-using Dsmviz.ViewModel.Interfaces.Matrix;
+using Dsmviz.Interfaces.ViewModel.Matrix;
 
 namespace Dsmviz.Viewer.ViewModel.Matrix
 {

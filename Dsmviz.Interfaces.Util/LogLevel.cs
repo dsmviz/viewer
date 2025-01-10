@@ -1,4 +1,4 @@
-﻿namespace Dsmviz.Viewer.Utils
+﻿namespace Dsmviz.Interfaces.Util
 {
     [Serializable]
     public enum LogLevel

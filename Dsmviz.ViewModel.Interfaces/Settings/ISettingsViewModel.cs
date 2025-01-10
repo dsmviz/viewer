@@ -1,8 +1,8 @@
 ﻿using System.ComponentModel;
 using System.Windows.Input;
-using Dsmviz.Viewer.Utils;
+using Dsmviz.Interfaces.Util;
 
-namespace Dsmviz.ViewModel.Interfaces.Settings
+namespace Dsmviz.Interfaces.ViewModel.Settings
 {
     public interface ISettingsViewModel
     {

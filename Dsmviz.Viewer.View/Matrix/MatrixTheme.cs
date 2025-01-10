@@ -3,7 +3,7 @@ using Dsmviz.Viewer.ViewModel.Common;
 using System.Globalization;
 using System.Windows;
 using System.Windows.Media;
-using Dsmviz.ViewModel.Interfaces.Common;
+using Dsmviz.Interfaces.ViewModel.Common;
 
 namespace Dsmviz.Viewer.View.Matrix
 {

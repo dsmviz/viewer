@@ -2,8 +2,8 @@
 <AnalyzerSettings xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <LogLevel>Error</LogLevel>
   <Input>
-    <AssemblyDirectory>C:\Github\dsmsuite.sourcecode.v2\build\Debug\net8.0</AssemblyDirectory>
-    <AssemblyDirectory>C:\Github\dsmsuite.sourcecode.v2\build\Debug\net8.0-windows</AssemblyDirectory>
+    <AssemblyDirectory>C:\Github\dsmviz.viewer\build\Debug\net8.0</AssemblyDirectory>
+    <AssemblyDirectory>C:\Github\dsmviz.viewer\build\Debug\net8.0-windows</AssemblyDirectory>
   </Input>
   <Transformation>
     <IgnoredNames>
@@ -15,7 +15,7 @@
     </IgnoredNames>
   </Transformation>
   <Output>
-    <Filename>DsmSuiteV2.dsi</Filename>
+    <Filename>DsmSuite.Viewer.dsi</Filename>
     <Compress>true</Compress>
   </Output>
 </AnalyzerSettings>

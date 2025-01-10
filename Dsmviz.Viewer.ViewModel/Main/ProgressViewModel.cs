@@ -1,7 +1,7 @@
 ﻿using System.ComponentModel;
 using Dsmviz.Interfaces.Util;
+using Dsmviz.Interfaces.ViewModel.Main;
 using Dsmviz.Viewer.ViewModel.Common;
-using Dsmviz.ViewModel.Interfaces.Main;
 
 namespace Dsmviz.Viewer.ViewModel.Main
 {

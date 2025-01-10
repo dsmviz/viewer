@@ -2,8 +2,8 @@
 
 using System.ComponentModel;
 using Dsmviz.Interfaces.Application.Persistency;
+using Dsmviz.Interfaces.ViewModel.Sidebar;
 using Dsmviz.Viewer.ViewModel.Common;
-using Dsmviz.ViewModel.Interfaces.Sidebar;
 
 namespace Dsmviz.Viewer.ViewModel.SideBar
 {

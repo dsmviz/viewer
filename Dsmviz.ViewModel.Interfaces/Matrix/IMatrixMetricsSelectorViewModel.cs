@@ -1,7 +1,7 @@
 ﻿using System.ComponentModel;
 using Dsmviz.Interfaces.Application.Metrics;
 
-namespace Dsmviz.ViewModel.Interfaces.Matrix
+namespace Dsmviz.Interfaces.ViewModel.Matrix
 {
     public interface IMatrixMetricsSelectorViewModel : INotifyPropertyChanged
     {

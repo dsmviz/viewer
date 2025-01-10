@@ -1,4 +1,4 @@
-﻿namespace Dsmviz.ViewModel.Interfaces.Lists.Action
+﻿namespace Dsmviz.Interfaces.ViewModel.Lists.Action
 {
     public interface IActionListItemViewModel
     {

@@ -1,7 +1,7 @@
 ﻿using System.ComponentModel;
 using Dsmviz.Interfaces.Util;
 
-namespace Dsmviz.ViewModel.Interfaces.Main
+namespace Dsmviz.Interfaces.ViewModel.Main
 {
     public interface IProgressViewModel
     {

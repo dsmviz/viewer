@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel;
 
-namespace Dsmviz.ViewModel.Interfaces.Tooltips
+namespace Dsmviz.Interfaces.ViewModel.Tooltips
 {
     public interface IElementToolTipViewModel
     {

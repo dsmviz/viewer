@@ -3,7 +3,8 @@ using System.ComponentModel;
 using Dsmviz.Viewer.Utils;
 using Dsmviz.Viewer.ViewModel.Common;
 using System.Windows.Input;
-using Dsmviz.ViewModel.Interfaces.Settings;
+using Dsmviz.Interfaces.Util;
+using Dsmviz.Interfaces.ViewModel.Settings;
 
 namespace Dsmviz.Viewer.ViewModel.Settings
 {

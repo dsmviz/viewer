@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel;
 
-namespace Dsmviz.ViewModel.Interfaces.Sidebar
+namespace Dsmviz.Interfaces.ViewModel.Sidebar
 {
     public interface IModelSideBarViewModel
     {

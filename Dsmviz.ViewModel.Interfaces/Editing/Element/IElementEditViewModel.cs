@@ -1,7 +1,7 @@
 ﻿using System.ComponentModel;
 using System.Windows.Input;
 
-namespace Dsmviz.ViewModel.Interfaces.Editing.Element
+namespace Dsmviz.Interfaces.ViewModel.Editing.Element
 {
     public interface IElementEditViewModel
     {

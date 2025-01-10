@@ -5,7 +5,7 @@ using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Text;
 using System.Windows.Input;
-using Dsmviz.ViewModel.Interfaces.Lists.Element;
+using Dsmviz.Interfaces.ViewModel.Lists.Element;
 
 namespace Dsmviz.Viewer.ViewModel.Lists.Element
 {

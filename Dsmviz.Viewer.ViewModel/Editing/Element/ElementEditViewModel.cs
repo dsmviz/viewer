@@ -6,7 +6,7 @@ using Dsmviz.Interfaces.Data.Entities;
 using Dsmviz.Viewer.Utils;
 using Dsmviz.Viewer.ViewModel.Common;
 using System.Windows.Input;
-using Dsmviz.ViewModel.Interfaces.Editing.Element;
+using Dsmviz.Interfaces.ViewModel.Editing.Element;
 
 namespace Dsmviz.Viewer.ViewModel.Editing.Element
 {

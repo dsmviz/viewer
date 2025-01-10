@@ -1,7 +1,7 @@
 ﻿using System.ComponentModel;
 using System.Windows.Input;
 
-namespace Dsmviz.ViewModel.Interfaces.Lists.Action
+namespace Dsmviz.Interfaces.ViewModel.Lists.Action
 {
     public interface IActionListViewModel
     {

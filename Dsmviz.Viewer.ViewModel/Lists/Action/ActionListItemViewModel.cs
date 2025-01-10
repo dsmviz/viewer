@@ -1,7 +1,7 @@
 ﻿using Dsmviz.Interfaces.Application.Editing;
 using Dsmviz.Viewer.ViewModel.Common;
 using System;
-using Dsmviz.ViewModel.Interfaces.Lists.Action;
+using Dsmviz.Interfaces.ViewModel.Lists.Action;
 
 namespace Dsmviz.Viewer.ViewModel.Lists.Action
 {

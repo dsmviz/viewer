@@ -1,7 +1,7 @@
 ﻿using Dsmviz.Interfaces.Application.Metrics;
 using Dsmviz.Viewer.ViewModel.Common;
 using System.Windows.Input;
-using Dsmviz.ViewModel.Interfaces.Matrix;
+using Dsmviz.Interfaces.ViewModel.Matrix;
 
 namespace Dsmviz.Viewer.ViewModel.Matrix
 {

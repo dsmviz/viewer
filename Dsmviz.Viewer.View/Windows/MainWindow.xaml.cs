@@ -11,9 +11,9 @@ using Dsmviz.Viewer.ViewModel.Settings;
 using System.Windows;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using Dsmviz.ViewModel.Interfaces.Editing.Element;
-using Dsmviz.ViewModel.Interfaces.Lists.Action;
-using Dsmviz.ViewModel.Interfaces.Settings;
+using Dsmviz.Interfaces.ViewModel.Editing.Element;
+using Dsmviz.Interfaces.ViewModel.Lists.Action;
+using Dsmviz.Interfaces.ViewModel.Settings;
 using SettingsView = Dsmviz.Viewer.View.Settings.SettingsView;
 
 namespace Dsmviz.Viewer.View.Windows

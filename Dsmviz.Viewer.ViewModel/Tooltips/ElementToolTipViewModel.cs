@@ -1,7 +1,7 @@
 ﻿using System.ComponentModel;
 using Dsmviz.Interfaces.Data.Entities;
+using Dsmviz.Interfaces.ViewModel.Tooltips;
 using Dsmviz.Viewer.ViewModel.Common;
-using Dsmviz.ViewModel.Interfaces.Tooltips;
 
 namespace Dsmviz.Viewer.ViewModel.Tooltips
 {

@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel;
 
-namespace Dsmviz.ViewModel.Interfaces.Lists.Element
+namespace Dsmviz.Interfaces.ViewModel.Lists.Element
 {
     public interface IElementListItemViewModel
     {

@@ -2,7 +2,7 @@
 using System.Globalization;
 using System.Windows;
 using System.Windows.Data;
-using Dsmviz.ViewModel.Interfaces.Search;
+using Dsmviz.Interfaces.ViewModel.Search;
 
 namespace Dsmviz.Viewer.View.ValueConverters
 {

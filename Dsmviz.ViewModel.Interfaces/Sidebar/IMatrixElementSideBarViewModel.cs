@@ -1,10 +1,10 @@
 ﻿using System.ComponentModel;
 using System.Windows.Input;
 using Dsmviz.Interfaces.Data.Entities;
-using Dsmviz.ViewModel.Interfaces.Lists.Element;
-using Dsmviz.ViewModel.Interfaces.Lists.Relation;
+using Dsmviz.Interfaces.ViewModel.Lists.Element;
+using Dsmviz.Interfaces.ViewModel.Lists.Relation;
 
-namespace Dsmviz.ViewModel.Interfaces.Sidebar
+namespace Dsmviz.Interfaces.ViewModel.Sidebar
 {
     public interface IMatrixElementSideBarViewModel
     {

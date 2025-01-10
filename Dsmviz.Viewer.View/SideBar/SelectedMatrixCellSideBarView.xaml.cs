@@ -2,7 +2,7 @@
 using Dsmviz.Viewer.ViewModel.Lists.Relation;
 using Dsmviz.Viewer.ViewModel.SideBar;
 using System.Windows;
-using Dsmviz.ViewModel.Interfaces.Lists.Relation;
+using Dsmviz.Interfaces.ViewModel.Lists.Relation;
 
 namespace Dsmviz.Viewer.View.SideBar
 {

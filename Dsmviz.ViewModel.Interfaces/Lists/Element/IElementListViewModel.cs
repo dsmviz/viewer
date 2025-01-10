@@ -2,7 +2,7 @@
 using System.ComponentModel;
 using System.Windows.Input;
 
-namespace Dsmviz.ViewModel.Interfaces.Lists.Element
+namespace Dsmviz.Interfaces.ViewModel.Lists.Element
 {
     public interface IElementListViewModel
     {

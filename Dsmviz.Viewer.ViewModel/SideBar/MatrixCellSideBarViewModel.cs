@@ -8,8 +8,8 @@ using Dsmviz.Interfaces.Data.Entities;
 using Dsmviz.Viewer.ViewModel.Common;
 using Dsmviz.Viewer.ViewModel.Lists.Relation;
 using System.Windows.Input;
-using Dsmviz.ViewModel.Interfaces.Lists.Relation;
-using Dsmviz.ViewModel.Interfaces.Sidebar;
+using Dsmviz.Interfaces.ViewModel.Lists.Relation;
+using Dsmviz.Interfaces.ViewModel.Sidebar;
 
 namespace Dsmviz.Viewer.ViewModel.SideBar
 {
