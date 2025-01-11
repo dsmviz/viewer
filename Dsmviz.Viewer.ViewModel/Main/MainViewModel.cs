@@ -1,4 +1,5 @@
-﻿using Dsmviz.Interfaces.Application.Editing;
+﻿using System.ComponentModel;
+using Dsmviz.Interfaces.Application.Editing;
 using Dsmviz.Interfaces.Application.Matrix;
 using Dsmviz.Interfaces.Application.Metrics;
 using Dsmviz.Interfaces.Application.Persistency;
@@ -17,6 +18,7 @@ using Dsmviz.Interfaces.ViewModel.Editing.Element;
 using Dsmviz.Interfaces.ViewModel.Lists.Action;
 using Dsmviz.Interfaces.ViewModel.Main;
 using Dsmviz.Interfaces.ViewModel.Matrix;
+using Dsmviz.Interfaces.ViewModel.Search;
 using Dsmviz.Interfaces.ViewModel.Settings;
 
 namespace Dsmviz.Viewer.ViewModel.Main
@@ -151,7 +153,7 @@ namespace Dsmviz.Viewer.ViewModel.Main
 
         public IMatrixViewModel MatrixViewModel => _matrixViewModel;
 
-        public ElementSearchViewModel ElementSearchViewModel => _elementSearchViewModel;
+        public IElementSearchViewModel ElementSearchViewModel => _elementSearchViewModel;
 
         private bool _isMetricsViewExpanded;
 
@@ -266,7 +268,7 @@ namespace Dsmviz.Viewer.ViewModel.Main
             set { _redoText = value; OnPropertyChanged(); }
         }
 
-        public ProgressViewModel ProgressViewModel => _progressViewModel;
+        public IProgressViewModel ProgressViewModel => _progressViewModel;
 
         // Toolbar commands
         private async void OpenFileExecute(object? parameter)

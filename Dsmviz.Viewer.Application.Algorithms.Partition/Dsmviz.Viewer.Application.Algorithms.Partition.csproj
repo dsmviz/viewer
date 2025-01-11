@@ -8,8 +8,9 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Dsmviz.Viewer.Algorithms.Common\Dsmviz.Viewer.Algorithms.Common.csproj" />
+    <ProjectReference Include="..\Dsmviz.Viewer.Algorithms.Common\Dsmviz.Viewer.Application.Algorithms.Common.csproj" />
     <ProjectReference Include="..\Dsmviz.Interfaces.Application\Dsmviz.Interfaces.Application.csproj" />
+    <ProjectReference Include="..\Dsmviz.Viewer.Application.Algorithms.Common\Dsmviz.Viewer.Application.Algorithms.Common.csproj" />
   </ItemGroup>
 
 </Project>

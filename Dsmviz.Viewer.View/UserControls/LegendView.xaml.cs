@@ -1,5 +1,6 @@
 ﻿using Dsmviz.Viewer.ViewModel.Main;
 using System.Windows;
+using Dsmviz.Interfaces.ViewModel.Main;
 
 namespace Dsmviz.Viewer.View.UserControls
 {
@@ -8,7 +9,7 @@ namespace Dsmviz.Viewer.View.UserControls
     /// </summary>
     public partial class LegendView
     {
-        private MainViewModel? _mainViewModel;
+        private IMainViewModel? _mainViewModel;
 
         public LegendView()
         {
@@ -17,7 +18,7 @@ namespace Dsmviz.Viewer.View.UserControls
 
         private void LegendView_OnLoaded(object sender, RoutedEventArgs e)
         {
-            _mainViewModel = DataContext as MainViewModel;
+            _mainViewModel = DataContext as IMainViewModel;
         }
     }
 }

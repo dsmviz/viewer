@@ -1,7 +1,7 @@
 
 using Dsmviz.Interfaces.Application.Algorithms;
 
-namespace Dsmviz.Viewer.Algorithms.Common
+namespace Dsmviz.Viewer.Application.Algorithms.Common
 {
     public class SortResult : ISortResult
     {

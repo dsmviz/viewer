@@ -4,15 +4,14 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:matrix="clr-namespace:Dsmviz.Viewer.View.Matrix"
-             xmlns:matrix1="clr-namespace:Dsmviz.Viewer.ViewModel.Matrix;assembly=Dsmviz.Viewer.ViewModel"
-             xmlns:tooltips_vm="clr-namespace:Dsmviz.Viewer.ViewModel.Tooltips;assembly=Dsmviz.Viewer.ViewModel"             
-             xmlns:sidebar="clr-namespace:Dsmviz.Viewer.View.SideBar"
+             xmlns:tooltips="clr-namespace:Dsmviz.Interfaces.ViewModel.Tooltips;assembly=Dsmviz.Interfaces.ViewModel"
+             xmlns:sideBar="clr-namespace:Dsmviz.Viewer.View.SideBar"
              mc:Ignorable="d" 
              d:DesignHeight="300" d:DesignWidth="300"
              Margin="5"
              Background="{StaticResource BackgroundColor}">
     <UserControl.Resources>
-        <DataTemplate DataType="{x:Type tooltips_vm:ElementToolTipViewModel}">
+        <DataTemplate DataType="{x:Type tooltips:IElementToolTipViewModel}">
             <Grid>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="10" />
@@ -47,7 +46,7 @@
             </Grid>
         </DataTemplate>
 
-        <DataTemplate DataType="{x:Type tooltips_vm:CellToolTipViewModel}">
+        <DataTemplate DataType="{x:Type tooltips:ICellToolTipViewModel}">
             <Grid>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="10" />
@@ -135,7 +134,7 @@
         <GridSplitter x:Name="Splitter2" Background="Transparent" Grid.Column="4" Grid.Row="0" Grid.RowSpan="2" HorizontalAlignment="Center" VerticalAlignment="Stretch" ShowsPreview="True" Width="5" Style="{StaticResource GridSplitterStyle}"/>
 
         <!-- edit view -->
-        <sidebar:SideBarView x:Name="MatrixEditView" Grid.Column="5" Grid.Row="0" Grid.RowSpan="2" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>        
+        <sideBar:SideBarView x:Name="MatrixEditView" Grid.Column="5" Grid.Row="0" Grid.RowSpan="2" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>        
     </Grid>
 </UserControl>
 

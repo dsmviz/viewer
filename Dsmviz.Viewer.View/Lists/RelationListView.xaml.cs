@@ -3,6 +3,7 @@ using Dsmviz.Viewer.ViewModel.Editing.Relation;
 using Dsmviz.Viewer.ViewModel.Lists.Relation;
 using System.Windows;
 using Dsmviz.Interfaces.ViewModel.Editing.Relation;
+using Dsmviz.Interfaces.ViewModel.Lists.Relation;
 
 namespace Dsmviz.Viewer.View.Lists
 {
@@ -11,7 +12,7 @@ namespace Dsmviz.Viewer.View.Lists
     /// </summary>
     public partial class RelationListView
     {
-        private RelationListViewModel? _viewModel;
+        private IRelationListViewModel? _viewModel;
 
         public RelationListView()
         {
@@ -20,7 +21,7 @@ namespace Dsmviz.Viewer.View.Lists
 
         private void RelationListView_OnLoaded(object sender, RoutedEventArgs e)
         {
-            _viewModel = DataContext as RelationListViewModel;
+            _viewModel = DataContext as IRelationListViewModel;
             if (_viewModel != null)
             {
                 _viewModel.RelationAddStarted += OnRelationAddStarted;

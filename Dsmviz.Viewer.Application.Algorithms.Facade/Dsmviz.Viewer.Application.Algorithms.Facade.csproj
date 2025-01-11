@@ -8,7 +8,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Dsmviz.Viewer.Algorithms.Common\Dsmviz.Viewer.Algorithms.Common.csproj" />
+    <ProjectReference Include="..\Dsmviz.Viewer.Algorithms.Common\Dsmviz.Viewer.Application.Algorithms.Common.csproj" />
     <ProjectReference Include="..\Dsmviz.Viewer.Application.Algorithms.Alphabetic\Dsmviz.Viewer.Application.Algorithms.Alphabetic.csproj" />
     <ProjectReference Include="..\Dsmviz.Viewer.Application.Algorithms.Partition\Dsmviz.Viewer.Application.Algorithms.Partition.csproj" />
     <ProjectReference Include="..\Dsmviz.Viewer.Utils\Dsmviz.Viewer.Utils.csproj" />

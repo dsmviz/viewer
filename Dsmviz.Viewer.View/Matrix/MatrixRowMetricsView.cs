@@ -31,7 +31,7 @@ namespace Dsmviz.Viewer.View.Matrix
 
         private void OnDataContextChanged(object sender, DependencyPropertyChangedEventArgs e)
         {
-            if (DataContext is MatrixViewModel matrixViewModel)
+            if (DataContext is IMatrixViewModel matrixViewModel)
             {
                 _matrixRowMetricsViewModel = matrixViewModel.MatrixRowMetricsViewModel;
                 _matrixRowMetricsViewModel.PropertyChanged += OnPropertyChanged;

@@ -1,6 +1,6 @@
 ﻿using Dsmviz.Interfaces.Application.Algorithms;
 using Dsmviz.Interfaces.Data.Entities;
-using Dsmviz.Viewer.Algorithms.Common;
+using Dsmviz.Viewer.Application.Algorithms.Common;
 
 namespace Dsmviz.Viewer.Application.Algorithms.Alphabetic
 {

@@ -13,6 +13,9 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using Dsmviz.Interfaces.ViewModel.Editing.Element;
 using Dsmviz.Interfaces.ViewModel.Lists.Action;
+using Dsmviz.Interfaces.ViewModel.Lists.Element;
+using Dsmviz.Interfaces.ViewModel.Lists.Relation;
+using Dsmviz.Interfaces.ViewModel.Main;
 using Dsmviz.Interfaces.ViewModel.Settings;
 using SettingsView = Dsmviz.Viewer.View.Settings.SettingsView;
 
@@ -23,7 +26,7 @@ namespace Dsmviz.Viewer.View.Windows
     /// </summary>
     public partial class MainWindow
     {
-        private MainViewModel? _mainViewModel;
+        private IMainViewModel? _mainViewModel;
         private ProgressWindow? _progressWindow;
 
         public MainWindow()
@@ -93,7 +96,7 @@ namespace Dsmviz.Viewer.View.Windows
             //}
         }
 
-        private void OnElementsReportReady(object sender, ElementListViewModel e)
+        private void OnElementsReportReady(object sender, IElementListViewModel e)
         {
             ElementListView view = new ElementListView
             {
@@ -103,7 +106,7 @@ namespace Dsmviz.Viewer.View.Windows
             view.Show();
         }
 
-        private void OnRelationsReportReady(object sender, RelationListViewModel e)
+        private void OnRelationsReportReady(object sender, IRelationListViewModel e)
         {
             RelationListView view = new RelationListView
             {

@@ -1,5 +1,7 @@
 ﻿using Dsmviz.Interfaces.Data.Entities;
 using Dsmviz.Interfaces.ViewModel.Common;
+using Dsmviz.Interfaces.ViewModel.Main;
+using Dsmviz.Interfaces.ViewModel.Sidebar;
 
 namespace Dsmviz.Interfaces.ViewModel.Matrix
 {
@@ -22,7 +24,19 @@ namespace Dsmviz.Interfaces.ViewModel.Matrix
         IElement? SelectedConsumer { get; }
         IElement? SelectedProvider { get; }
 
-        ViewPerspective SelectedViewPerspective { get; }
+        IModelSideBarViewModel ModelInfoViewModel { get; }
+        IMatrixElementSideBarViewModel ElementInfoViewModel { get; }
+        IMatrixCellSideBarViewModel RelationInfoViewModel { get; }
+
+        IMatrixMetricsSelectorViewModel MatrixMetricsSelectorViewModel { get; }
+        IMatrixRowMetricsViewModel MatrixRowMetricsViewModel { get; }
+
+        IMatrixRowHeaderViewModel MatrixRowHeaderViewModel { get; }
+        IMatrixColumnHeaderViewModel MatrixColumnHeaderViewModel { get; }
+        IMatrixCellsViewModel MatrixCellsViewModel { get; }
+
+        public ViewPerspective SelectedViewPerspective { get; }
+
         bool IsSearchActive { get; }
 
         double ZoomLevel { get; set; }

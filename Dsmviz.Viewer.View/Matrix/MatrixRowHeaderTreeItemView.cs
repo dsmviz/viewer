@@ -1,5 +1,4 @@
 ﻿using Dsmviz.Interfaces.Data.Entities;
-using Dsmviz.Viewer.ViewModel.Common;
 using Dsmviz.Viewer.ViewModel.Matrix;
 using System.Windows;
 using System.Windows.Input;
@@ -14,7 +13,7 @@ namespace Dsmviz.Viewer.View.Matrix
         private readonly IMatrixRowHeaderViewModel _matrixRowHeaderViewModel;
         private static readonly string DataObjectName = "Element";
         private readonly MatrixTheme _theme;
-        private MatrixRowHeaderTreeItemViewModel? _rowHeaderItemViewModel;
+        private IMatrixRowHeaderTreeItemViewModel? _rowHeaderItemViewModel;
         private readonly int _indicatorWith = 5;
         private bool _isValidDropTarget;
         private bool _isInvalidDropTarget;
@@ -32,7 +31,7 @@ namespace Dsmviz.Viewer.View.Matrix
 
         private void OnDataContextChanged(object sender, DependencyPropertyChangedEventArgs e)
         {
-            _rowHeaderItemViewModel = e.NewValue as MatrixRowHeaderTreeItemViewModel;
+            _rowHeaderItemViewModel = e.NewValue as IMatrixRowHeaderTreeItemViewModel;
             if (_rowHeaderItemViewModel != null)
             {
                 _rowHeaderItemViewModel.PropertyChanged += OnPropertyChanged;
@@ -146,8 +145,8 @@ namespace Dsmviz.Viewer.View.Matrix
 
             if (e.Data.GetDataPresent(DataObjectName))
             {
-                MatrixRowHeaderTreeItemViewModel? dragged = (MatrixRowHeaderTreeItemViewModel)e.Data.GetData(DataObjectName);
-                MatrixRowHeaderTreeItemViewModel? dropTarget = _rowHeaderItemViewModel;
+                IMatrixRowHeaderTreeItemViewModel? dragged = (IMatrixRowHeaderTreeItemViewModel)e.Data.GetData(DataObjectName);
+                IMatrixRowHeaderTreeItemViewModel? dropTarget = _rowHeaderItemViewModel;
 
                 if ((dragged != null) &&
                     (dropTarget != null) &&
@@ -172,8 +171,8 @@ namespace Dsmviz.Viewer.View.Matrix
 
             if (e.Data.GetDataPresent(DataObjectName))
             {
-                MatrixRowHeaderTreeItemViewModel? dragged = (MatrixRowHeaderTreeItemViewModel)e.Data.GetData(DataObjectName);
-                MatrixRowHeaderTreeItemViewModel? dropTarget = _rowHeaderItemViewModel;
+                IMatrixRowHeaderTreeItemViewModel? dragged = (IMatrixRowHeaderTreeItemViewModel)e.Data.GetData(DataObjectName);
+                IMatrixRowHeaderTreeItemViewModel? dropTarget = _rowHeaderItemViewModel;
 
                 if ((dragged != null) &&
                     (dropTarget != null) &&

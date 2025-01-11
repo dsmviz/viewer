@@ -11,6 +11,7 @@ using System.Windows.Input;
 using Dsmviz.Interfaces.ViewModel.Common;
 using Dsmviz.Interfaces.ViewModel.Main;
 using Dsmviz.Interfaces.ViewModel.Matrix;
+using Dsmviz.Interfaces.ViewModel.Sidebar;
 
 namespace Dsmviz.Viewer.ViewModel.Matrix
 {
@@ -78,9 +79,9 @@ namespace Dsmviz.Viewer.ViewModel.Matrix
             Reload();
         }
 
-        public ModelSideBarViewModel ModelInfoViewModel => _modelInfoViewModel;
-        public MatrixElementSideBarViewModel ElementInfoViewModel => _elementInfoViewModel;
-        public MatrixCellSideBarViewModel RelationInfoViewModel => _relationInfoViewModel;
+        public IModelSideBarViewModel ModelInfoViewModel => _modelInfoViewModel;
+        public IMatrixElementSideBarViewModel ElementInfoViewModel => _elementInfoViewModel;
+        public IMatrixCellSideBarViewModel RelationInfoViewModel => _relationInfoViewModel;
 
         public IMatrixMetricsSelectorViewModel MatrixMetricsSelectorViewModel => _matrixMetricsSelectorViewModel;
         public IMatrixRowMetricsViewModel MatrixRowMetricsViewModel => _matrixRowMetricsViewModel;

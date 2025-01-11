@@ -1,6 +1,7 @@
 ﻿using Dsmviz.Viewer.ViewModel.Main;
 using System.Windows;
 using System.Windows.Controls;
+using Dsmviz.Interfaces.ViewModel.Main;
 using OpenFileDialog = Microsoft.Win32.OpenFileDialog;
 
 namespace Dsmviz.Viewer.View.UserControls
@@ -10,7 +11,7 @@ namespace Dsmviz.Viewer.View.UserControls
     /// </summary>
     public partial class ToolView
     {
-        private MainViewModel? _mainViewModel;
+        private IMainViewModel? _mainViewModel;
 
         public ToolView()
         {
@@ -19,7 +20,7 @@ namespace Dsmviz.Viewer.View.UserControls
 
         private void ToolView_OnLoaded(object sender, RoutedEventArgs e)
         {
-            _mainViewModel = DataContext as MainViewModel;
+            _mainViewModel = DataContext as IMainViewModel;
         }
 
         private void OpenButtonClick(object sender, RoutedEventArgs e)

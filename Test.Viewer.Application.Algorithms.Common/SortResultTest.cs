@@ -1,6 +1,6 @@
 ﻿
 
-using Dsmviz.Viewer.Algorithms.Common;
+using Dsmviz.Viewer.Application.Algorithms.Common;
 
 namespace Dsmviz.Test.Application.Algorithms.Common
 {

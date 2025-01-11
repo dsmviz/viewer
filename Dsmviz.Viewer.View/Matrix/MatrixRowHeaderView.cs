@@ -20,7 +20,7 @@ namespace Dsmviz.Viewer.View.Matrix
 
         private void OnDataContextChanged(object sender, DependencyPropertyChangedEventArgs e)
         {
-            if (DataContext is MatrixViewModel matrixViewModel)
+            if (DataContext is IMatrixViewModel matrixViewModel)
             {
                 _matrixRowHeaderViewModel = matrixViewModel.MatrixRowHeaderViewModel;
                 _matrixRowHeaderViewModel.PropertyChanged += OnPropertyChanged;
@@ -56,7 +56,7 @@ namespace Dsmviz.Viewer.View.Matrix
             Children.Clear();
             if (_matrixRowHeaderViewModel?.ElementViewModelTree != null)
             {
-                foreach (MatrixRowHeaderTreeItemViewModel elementViewModel in _matrixRowHeaderViewModel.ElementViewModelTree)
+                foreach (IMatrixRowHeaderTreeItemViewModel elementViewModel in _matrixRowHeaderViewModel.ElementViewModelTree)
                 {
                     Rect rect = GetCalculatedSize(elementViewModel, y);
 
@@ -80,9 +80,9 @@ namespace Dsmviz.Viewer.View.Matrix
             //Width = 5000; // Should be enough to draw very deep tree
         }
 
-        private void CreateChildViews(MatrixRowHeaderTreeItemViewModel elementViewModel, double y)
+        private void CreateChildViews(IMatrixRowHeaderTreeItemViewModel elementViewModel, double y)
         {
-            foreach (MatrixRowHeaderTreeItemViewModel child in elementViewModel.Children)
+            foreach (IMatrixRowHeaderTreeItemViewModel child in elementViewModel.Children)
             {
                 Rect rect = GetCalculatedSize(child, y);
 
@@ -102,7 +102,7 @@ namespace Dsmviz.Viewer.View.Matrix
             }
         }
 
-        private Rect GetCalculatedSize(MatrixRowHeaderTreeItemViewModel viewModel, double y)
+        private Rect GetCalculatedSize(IMatrixRowHeaderTreeItemViewModel viewModel, double y)
         {
             Rect rect;
 

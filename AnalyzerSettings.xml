@@ -2,7 +2,6 @@
 <AnalyzerSettings xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <LogLevel>Error</LogLevel>
   <Input>
-    <AssemblyDirectory>C:\Github\dsmviz.viewer\build\Debug\net8.0</AssemblyDirectory>
     <AssemblyDirectory>C:\Github\dsmviz.viewer\build\Debug\net8.0-windows</AssemblyDirectory>
   </Input>
   <Transformation>

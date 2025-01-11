@@ -1,10 +1,8 @@
-﻿
-
-using Dsmviz.Interfaces.Application.Algorithms;
+﻿using Dsmviz.Interfaces.Application.Algorithms;
 using Dsmviz.Viewer.Application.Algorithms.Alphabetic;
 using Dsmviz.Viewer.Application.Algorithms.Partition;
 
-namespace Dsmviz.Viewer.Application.Algorithms
+namespace Dsmviz.Viewer.Application.Algorithms.Facade
 {
     public class CoreAlgorithmsFacade : ISortAlgorithms
     {

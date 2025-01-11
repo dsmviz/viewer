@@ -1,5 +1,5 @@
 
-using Dsmviz.Viewer.Application.Algorithms;
+using Dsmviz.Viewer.Application.Algorithms.Facade;
 using Dsmviz.Viewer.Application.Editing.Facade;
 using Dsmviz.Viewer.Application.Matrix;
 using Dsmviz.Viewer.Application.Metrics;

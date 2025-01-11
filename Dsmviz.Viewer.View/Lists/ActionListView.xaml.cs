@@ -1,5 +1,6 @@
 ﻿using Dsmviz.Viewer.ViewModel.Lists.Action;
 using System.Windows;
+using Dsmviz.Interfaces.ViewModel.Lists.Action;
 
 namespace Dsmviz.Viewer.View.Lists
 {
@@ -8,7 +9,7 @@ namespace Dsmviz.Viewer.View.Lists
     /// </summary>
     public partial class ActionListView
     {
-        private ActionListViewModel? _viewModel;
+        private IActionListViewModel? _viewModel;
 
         public ActionListView()
         {
@@ -17,7 +18,7 @@ namespace Dsmviz.Viewer.View.Lists
 
         private void ActionListView_OnLoaded(object sender, RoutedEventArgs e)
         {
-            _viewModel = DataContext as ActionListViewModel;
+            _viewModel = DataContext as IActionListViewModel;
         }
     }
 }

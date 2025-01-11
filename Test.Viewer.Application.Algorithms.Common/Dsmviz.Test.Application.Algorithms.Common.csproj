@@ -24,7 +24,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Dsmviz.Viewer.Algorithms.Common\Dsmviz.Viewer.Algorithms.Common.csproj" />
+    <ProjectReference Include="..\Dsmviz.Viewer.Algorithms.Common\Dsmviz.Viewer.Application.Algorithms.Common.csproj" />
+    <ProjectReference Include="..\Dsmviz.Viewer.Application.Algorithms.Common\Dsmviz.Viewer.Application.Algorithms.Common.csproj" />
   </ItemGroup>
 
   <ItemGroup>

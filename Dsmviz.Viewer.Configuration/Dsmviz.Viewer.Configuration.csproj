@@ -8,14 +8,19 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Dsmviz.Viewer.Application.Algorithms\Dsmviz.Viewer.Application.Algorithms.csproj" />
+    <ProjectReference Include="..\Dsmviz.Viewer.Application.Algorithms.Alphabetic\Dsmviz.Viewer.Application.Algorithms.Alphabetic.csproj" />
+    <ProjectReference Include="..\Dsmviz.Viewer.Application.Algorithms.Common\Dsmviz.Viewer.Application.Algorithms.Common.csproj" />
+    <ProjectReference Include="..\Dsmviz.Viewer.Application.Algorithms.Facade\Dsmviz.Viewer.Application.Algorithms.Facade.csproj" />
+    <ProjectReference Include="..\Dsmviz.Viewer.Application.Algorithms.Partition\Dsmviz.Viewer.Application.Algorithms.Partition.csproj" />
     <ProjectReference Include="..\Dsmviz.Viewer.Application.Editing\Dsmviz.Viewer.Application.Editing.csproj" />
     <ProjectReference Include="..\Dsmviz.Viewer.Application.Matrix\Dsmviz.Viewer.Application.Matrix.csproj" />
     <ProjectReference Include="..\Dsmviz.Viewer.Application.Metrics\Dsmviz.Viewer.Application.Metrics.csproj" />
     <ProjectReference Include="..\Dsmviz.Viewer.Application.Persistency\Dsmviz.Viewer.Application.Persistency.csproj" />
     <ProjectReference Include="..\Dsmviz.Viewer.Application.Query\Dsmviz.Viewer.Application.Query.csproj" />
+    <ProjectReference Include="..\Dsmviz.Viewer.Data.Import.Dsi\Dsmviz.Viewer.Data.Import.Dsi.csproj" />
     <ProjectReference Include="..\Dsmviz.Viewer.Data.Model\Dsmviz.Viewer.Data.Model.csproj" />
     <ProjectReference Include="..\Dsmviz.Viewer.Data.Store\Dsmviz.Viewer.Data.Store.csproj" />
+    <ProjectReference Include="..\Dsmviz.Viewer.Utils\Dsmviz.Viewer.Utils.csproj" />
     <ProjectReference Include="..\Dsmviz.Viewer.Viewmodel\Dsmviz.Viewer.Viewmodel.csproj" />
   </ItemGroup>
 

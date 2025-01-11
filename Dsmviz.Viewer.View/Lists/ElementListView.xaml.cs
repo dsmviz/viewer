@@ -1,5 +1,6 @@
 ﻿using Dsmviz.Viewer.ViewModel.Lists.Element;
 using System.Windows;
+using Dsmviz.Interfaces.ViewModel.Lists.Element;
 
 namespace Dsmviz.Viewer.View.Lists
 {
@@ -8,7 +9,7 @@ namespace Dsmviz.Viewer.View.Lists
     /// </summary>
     public partial class ElementListView
     {
-        private ElementListViewModel? _viewModel;
+        private IElementListViewModel? _viewModel;
 
         public ElementListView()
         {
@@ -17,7 +18,7 @@ namespace Dsmviz.Viewer.View.Lists
 
         private void ElementListView_OnLoaded(object sender, RoutedEventArgs e)
         {
-            _viewModel = DataContext as ElementListViewModel;
+            _viewModel = DataContext as IElementListViewModel;
         }
     }
 }
